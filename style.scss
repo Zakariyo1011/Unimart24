@@ -1,0 +1,857 @@
+
+$red-unimart: #BC0010;
+$blue-links: #358BC5;
+$light-gray-bg: #F3F3F3;
+$border-color: #E5E5E5;
+$text-black: #000000;
+$font-main: 'Open Sans', sans-serif;
+
+// 2. Global sozlamalar
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    color: $text-black;
+    line-height: 1;
+}
+
+.container {
+    max-width: 1240px; 
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.top-line {
+    width: 100%;
+    height: 8px;
+    background-color: $red-unimart;
+}
+
+// 4. Header
+.header {
+    
+    &__top-bar {
+        background-color: $light-gray-bg;
+        height: 47px; 
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: 15px;
+        
+        a {
+            color: $blue-links;
+            text-decoration: none;
+            white-space: nowrap;
+            &:hover { text-decoration: underline; }
+        }
+    }
+
+    &__user-info {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+
+        .city {
+    font-size: 13px;
+    color: #000;
+
+    &-select {
+        color: #358BC5; 
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px; 
+        margin-left: 4px;
+
+        
+
+        i {
+            font-size: 10px; // 
+            color: #000;    
+            width: 8px;     
+            height: 5px;    
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+        .auth {
+    display: flex;
+    align-items: center;
+    
+    gap: 6px; 
+
+    .auth-icon {
+        font-size: 12px;
+        color: #084599;
+        margin-right: 2px;
+    }
+
+    a {
+        color: #358BC5; 
+        text-decoration: none;
+        font-size: 13px;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 100%;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    
+    .auth-divider {
+        width: 1px;
+        height: 13px; 
+        background-color: #000000; 
+        margin: 0 4px;
+        display: inline-block;
+    }
+}
+    }
+
+    // Middle Header (Logo, Phone, Actions)
+    &__middle {
+        padding: 30px 0; 
+        
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__logo img {
+        width: 168px; 
+        height: auto;
+    }
+
+.header__contacts {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 25px;           
+    
+    // Telefon qismi
+    .phone-row {
+        display: flex;
+        align-items: center;
+        gap: 10px; // 
+
+        i {
+            color: #757575; 
+            font-size: 18px;
+        }
+
+        a {
+            font-size: 26px;
+            font-weight: 400;
+            color: #000;
+            text-decoration: none;
+            white-space: nowrap; 
+        }
+    }
+
+    // Tugma qismi
+    .callback-dropdown {
+        width: 187px;
+        height: 32px;
+        border: 1px solid #E5E5E5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+        background: #fff;
+
+        span {
+            font-size: 13px;
+            color: #358BC5; 
+            white-space: nowrap;
+        }
+
+        i {
+            font-size: 10px;
+            color: #000; 
+        }
+
+        &:hover {
+            border-color: #ccc;
+        }
+    }
+}
+
+   &__actions {
+    display: flex;
+    align-items: center;
+    
+    gap: 130px; 
+    flex-shrink: 0; 
+
+    .action-item {
+        display: flex;
+        align-items: center;
+        gap: 6px; 
+        text-decoration: none;
+
+        .action-icon i {
+            font-size: 26px; 
+            color: $red-unimart;
+            display: block;
+        }
+
+        .action-text {
+            display: flex;
+            flex-direction: column;
+            
+            line-height: 1.1; 
+
+            strong {
+                display: block;
+                font-size: 14px;
+                font-weight: 400;
+                color: #000;
+                margin-bottom: 2px;
+            }
+
+            span {
+                display: block;
+                font-size: 13px;
+                color: $blue-links;
+                white-space: nowrap; 
+                font-weight: 400;
+            }
+        }
+
+        &:hover span {
+            text-decoration: underline;
+        }
+    }
+}
+
+    &__bottom {
+    padding-bottom: 20px;
+    .container { 
+        display: flex; 
+        height: 40px; 
+        align-items: center; 
+    }
+}
+
+.catalog-box {
+    .btn-catalog {
+        background-color: #f3f3f3;
+        border: none;
+        height: 40px; 
+        width: 230px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        padding: 0 15px; 
+        font-weight: 400;
+        font-size: 13px;
+        cursor: pointer;
+        color: #000;
+
+        span {
+            
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        i {
+            font-size: 16px;
+            color: #000;
+            
+            margin-left: 10px; 
+        }
+
+        
+    }
+}
+
+.search-box {
+    flex: 1;
+    display: flex;
+    height: 40px;
+    border: 1px solid #E5E5E5; 
+    border-left: none; 
+
+    .search-input-wrapper {
+        flex: 1;
+        position: relative;
+        
+        .search-icon-left {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #BC0010; 
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding-left: 45px;
+            font-size: 14px;
+            outline: none;
+            background: transparent;
+
+            &::placeholder {
+                color: #999;
+            }
+        }
+    }
+
+    .btn-search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border: none;
+        width: 42px;
+        height: 100%; 
+        cursor: pointer;
+        font-size: 14px;
+        background-color: #6B7FA0;
+        flex-shrink: 0; 
+    }
+}
+}
+
+
+
+$primary-red: #C11831;
+$dark-red: #7D1D2F;
+$white: #ffffff;
+$gray-light: #D9D9D9;
+
+.hero {
+    width: 100%;
+    max-width: 1300px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+
+    &__container {
+        display: flex;
+        height: 500px;
+        position: relative;
+        background-color: #fff;
+        
+    }
+
+    &__content {
+        position: relative;
+        flex: 0 0 500px;
+        background: linear-gradient(180deg, $primary-red 0%, $dark-red 100%);
+        color: $white;
+        padding: 120px 70px 50px 70px;
+        z-index: 10; 
+        clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+        
+
+        .hero__brand {
+            position: absolute; 
+            top: 0;             
+            left: 0;            
+            background-color: #fff;
+            padding: 20px 60px 20px 87px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            
+            clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+    img {
+        width: 140px; 
+        height: auto;
+        display: block;
+        
+    }
+        }
+
+        
+        .hero__title { 
+    margin-top: 25px; 
+    font-size: 48px;  
+    font-weight: 900; 
+    color: #fff;
+    line-height: 1.05; 
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px; 
+}
+
+.hero__features {
+    list-style: none; 
+    padding: 0; 
+    margin-bottom: 50px; 
+    
+    li { 
+        display: flex; 
+        align-items: baseline; 
+        margin-bottom: 8px;
+        font-size: 16px; 
+        font-weight: 500; 
+        opacity: 0.9; 
+        font-size: 18px;
+        
+        &::before { 
+            content: "•"; 
+            margin-right: 12px; 
+            font-size: 18px;
+            color: #fff;
+        }
+    }
+}
+
+.hero__footer { 
+    margin-top: auto; 
+    
+    .hero__promo { 
+        font-size: 24px; 
+        line-height: 1.3;
+        font-weight: 500;
+        
+        
+    } 
+}
+    }
+
+    &__visual {
+        flex: 1;
+        margin-left: -100px; 
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    &__image-wrapper {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        
+        gap: 0;
+    }
+
+    &__image-item {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        
+        &:first-child {
+            flex: 0 0 55%; 
+            z-index: 2;
+            transform: skewX(-12deg); 
+            margin-left: -40px;
+            border-right: 6px solid #fff; 
+        
+        &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: -2px; 
+                width: 6px;  
+                height: 100%;
+                background-color: #fff;
+                z-index: 3;
+                
+                clip-path: polygon(100% 0, 100% 0, 85% 100%, 85% 100%); 
+                
+            }
+        }
+
+        &:last-child {
+            flex: 1; 
+            margin-left: -10%; 
+            z-index: 1;
+            
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__dots {
+        position: absolute;
+        bottom: 30px;
+        left: 150px;
+        z-index: 20;
+        display: flex;
+        gap: 14px;
+
+        .dot {
+            width: 24px;
+            height: 24px;
+            background: rgba(255,255,255, 0.6);
+            border: 2px solid #fff;
+            cursor: pointer;
+            &.active { 
+                background: 
+                $primary-red; 
+                border-color: 
+                $primary-red; 
+            }
+        }
+    }
+}
+
+//Catalog tovarov//
+
+// Ranglar
+$gray-border: #DDDDDD;
+$text-black: #000000;
+
+.catalog {
+    padding: 80px 0;
+    font-family: 'Open Sans', sans-serif;
+
+    &__container {
+        max-width: 1350px; // Figma: Hug (1,350px)
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    &__header {
+        margin-bottom: 50px;
+        
+        .catalog__title {
+            padding: 0 60px;
+            font-size: 34px; // Figma Typography
+            font-weight: 400;
+            line-height: 26px;
+            color: $text-black;
+            margin-bottom: 22px;
+            
+        }
+
+        .catalog__line {
+            
+            width: 94%;
+            margin: auto;
+            height: 2px;
+            background-color: $gray-border; 
+        }
+    }
+
+    &__slider-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        padding-top: 30px;
+    }
+
+    &__grid {
+        display: flex;
+        gap: 20px; // Figma Gap: 20px
+        flex: 1;
+    }
+
+    &__item {
+        flex: 0 0 292px; // Figma Width: 292px
+        height: 400px;    // Figma Height: 400px
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.1);
+        }
+
+        &-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px; 
+            padding: 24px;
+            display: flex;
+            align-items: flex-end;
+            
+            h3 {
+                color: #ffffff;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 1.2;
+                margin: 0;
+                z-index: 2;
+            }
+        }
+
+        // Figma ranglaridan olingan gradientlar
+        &--orange .catalog__item-info {
+            background: linear-gradient(to top, rgba(190, 73, 16, 0.9) 0%, rgba(190, 73, 16, 0) 100%);
+        }
+        &--brown .catalog__item-info {
+            background: linear-gradient(to top, rgba(76, 46, 35, 0.9) 0%, rgba(76, 46, 35, 0) 100%);
+        }
+        &--gray .catalog__item-info {
+            background: linear-gradient(to top, rgba(108, 92, 85, 0.9) 0%, rgba(108, 92, 85, 0) 100%);
+        }
+        &--green .catalog__item-info {
+            background: linear-gradient(to top, rgba(46, 105, 34, 0.9) 0%, rgba(46, 105, 34, 0) 100%);
+        }
+    }
+}
+
+// Slayder o'qlari
+.slider-arrow {
+    width: 40px; // Figma: 40x40
+    height: 40px;
+    background: #ffffff;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+
+    svg {
+        width: 60px;
+        fill: #C11831; 
+    }
+
+    &:hover {
+        background: #fff;
+    }
+}
+
+// Pagination nuqtalari
+.catalog__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 16px; // Figma Gap: 16px
+    margin-top: 30px;
+
+    .p-dot {
+        width: 8px;
+        height: 8px;
+        background: #DDDDDD;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &.active {
+            background: #C11831;
+        }
+    }
+}
+
+
+//Offers//
+
+$font-main: 'Open Sans', sans-serif;
+$c-blue: #4A90E2;
+$c-red: #E30613;
+$c-gray-bg: #F3F3F3;
+$c-gray-text: #9F9F9F;
+$c-dark-text: #3D3D3D;
+$c-border: #DDDDDD;
+
+.main-container {
+  width: 1230px; // Figma Line 9 width
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: $font-main;
+  font-size: 34px; // Figma Screenshot 3
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid $c-border; // Figma Screenshot 4
+}
+
+.layout-grid {
+  display: flex;
+  gap: 20px;
+}
+
+// Sidebar
+.sidebar-nav {
+  width: 308px; // Figma Screenshot 5
+  
+  .category-list {
+    background: #fff;
+    border: 1px solid #eee;
+    
+    &__header {
+      padding: 10px 17px 10px 20px; // Screenshot 9
+      display: flex;
+      justify-content: space-between;
+      color: $c-gray-text;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+}
+
+.category-item {
+  list-style: none;
+  padding: 10px 20px; // Screenshot 9
+  font-size: 14px;
+  color: $c-gray-text;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+
+  &--active {
+    background: $c-gray-bg; // Screenshot 9 fon rangi
+    color: $c-dark-text;
+    font-weight: 600;
+    border-left-color: $c-red; // Qizil indikator
+  }
+}
+
+.sidebar-promo {
+  margin-top: 20px;
+  img { width: 268px; height: 268px; object-fit: cover; } // Screenshot 10
+}
+
+// Filter Bar
+.filter-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 14px;
+
+  .filter-left { display: flex; gap: 30px; }
+  .blue-text { color: $c-blue; }
+  .dropdown-filter { cursor: pointer; i { font-size: 10px; margin-left: 5px; color: #999; } }
+  
+  .clear-btn {
+    border: none; background: none; color: $c-red; 
+    margin-left: 10px; cursor: pointer;
+  }
+}
+
+// Product Grid & Card
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 308px); // Figma Frame 521
+  gap: 24px; // Frame 521 gap
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #EEEEEE;
+  padding: 20px 20px 32px 20px; // Screenshot 12 (top/side: 20, bottom: 32)
+  position: relative;
+  transition: box-shadow 0.3s;
+
+  &:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+  &__image {
+    position: relative;
+    margin-bottom: 15px;
+    img { width: 268px; height: 268px; object-fit: cover; }
+    
+    .badge-group {
+      position: absolute; bottom: 0; left: 0; display: flex; gap: 4px;
+    }
+  }
+
+  .product-title {
+    font-size: 14px;
+    color: $c-blue;
+    line-height: 1.4;
+    height: 60px; // 3 qator matn uchun
+    margin-bottom: 15px;
+    font-weight: 400;
+  }
+}
+
+.promo-line {
+  color: $c-red;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.all-promos {
+  font-size: 11px;
+  color: $c-blue;
+  text-decoration: underline;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+// Price Styling
+.price-section {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #F0F0F0;
+  padding-top: 12px;
+
+  .price-box {
+    .price-label { display: block; font-size: 10px; color: $c-gray-text; margin-bottom: 4px; }
+    .price-num {
+      font-size: 18px; font-weight: 700;
+      sup { font-size: 10px; top: -0.5em; }
+      .currency { font-size: 14px; font-weight: 400; }
+    }
+
+    &--sale {
+      .price-num { background: #FFF9C4; padding: 2px 4px; } // Sariq fonli narx
+      .old-price { 
+        display: block; font-size: 10px; text-decoration: line-through; color: #999;
+        .save { color: #43A047; text-decoration: none; display: block; }
+      }
+    }
+  }
+}
+
+// Navigation & Dots
+.nav-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  border: none; background: none; color: $c-red; font-size: 24px; cursor: pointer;
+  &.prev-arrow { left: -40px; }
+  &.next-arrow { right: -40px; }
+}
+
+.slider-dots {
+  display: flex; justify-content: center; gap: 8px; margin-top: 30px;
+  span {
+    width: 8px; height: 8px; border-radius: 50%; background: #DDD;
+    &.active { background: $c-red; }
+  }
+}
+
+.badge {
+  padding: 3px 8px; font-size: 10px; color: #fff;
+  &--blue { background: #004691; }
+  &--green { background: #28A745; }
+}
+

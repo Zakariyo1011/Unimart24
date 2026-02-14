@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unimart - Dev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-line"></div>
+
+    <header class="header">
+        <div class="header__top-bar">
+            <div class="container">
+                <nav class="header__nav">
+                    <a href="#">О компании</a>
+                    <a href="#">О сотрудничестве</a>
+                    <a href="#">Доставка и оплата</a>
+                    <a href="#">Контакты</a>
+                    <a href="#">Новости</a>
+                    <a href="#">Акции и скидки</a>
+                    <a href="#">Отзывы</a>
+                    <a href="#">Полезные материалы</a>
+                </nav>
+                <div class="header__user-info">
+                    <div class="city">
+    Ваш город: 
+    <a href="#" class="city-select">
+        <span>Не выбрано</span>
+        <i class="fa-solid fa-caret-down"></i> </a>
+</div>
+                    <div class="auth">
+    <i class="fa-solid fa-lock auth-icon"></i>
+    <a href="#">Вход</a>
+    <span class="auth-divider"></span>
+    <a href="#">Регистрация</a>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__middle">
+            <div class="container">
+                <div class="header__logo">
+                    <img src="img/logo.png" alt="UNIMART">
+                </div>
+
+                <div class="header__contacts">
+                    <div class="phone-row">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:84951183952">8 (495) 118 39 52</a>
+                    </div>
+                    <div class="callback-dropdown">
+                        <span>Свяжитесь с нами</span>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                </div>
+
+                <div class="header__actions">
+                    <div class="action-item">
+                        <div class="action-icon">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <div class="action-text">
+                            <strong>Избранное</strong>
+                            <span>Товаров (0)</span>
+                        </div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <div class="action-text">
+                            <strong>Корзина</strong>
+                            <span>Ваша корзина пуста</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__bottom">
+            <div class="container">
+                <div class="catalog-box">
+    <button class="btn-catalog">
+        <span>Каталог товаров</span>
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</div>
+                <div class="search-box">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+                        <input type="text" placeholder="Введите название товара и артикул">
+                    </div>
+                    <button class="btn-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+    <div class="hero__container">
+        <div class="hero__content">
+            <div class="hero__brand">
+                <img src="img/lsr-logo.png" alt="LSR Logo">
+            </div>
+            <h1 class="hero__title">КЛИНКЕРНАЯ <br> БРУСЧАТКА</h1>
+            <ul class="hero__features">
+                <li>Ноттингем (красный флэш)</li>
+                <li>Бонн (терракот)</li>
+            </ul>
+            <div class="hero__footer">
+                <p class="hero__promo">
+                    Специальные цены, <br>
+                    <strong>только до 30 сентября</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="hero__visual">
+            <div class="hero__image-wrapper">
+                <div class="hero__image-item">
+                    <img src="img/brig1.png" alt="Paving 1">
+                </div>
+                <div class="hero__image-item">
+                    <img src="img/brig2.png" alt="Paving 2">
+                </div>
+            </div>
+            
+            <div class="hero__dots">
+                <span class="dot"></span>
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Catalog tovarov-->
+
+<section class="catalog">
+    <div class="catalog__container">
+        <div class="catalog__header">
+            <h1 class="catalog__title">Каталог товаров</h1>
+            <div class="catalog__line"></div>
+        </div>
+
+        <div class="catalog__slider-wrapper">
+            <button class="slider-arrow slider-arrow--left">
+                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+
+            <div class="catalog__grid">
+                <div class="catalog__item catalog__item--orange">
+                    <img src="img/catalog1.jpg" alt="Общестроительные материалы">
+                    <div class="catalog__item-info">
+                        <h3>Общестроительные материалы</h3>
+                    </div>
+                </div>
+
+                <div class="catalog__item catalog__item--brown">
+                    <img src="img/catalog2.png" alt="Кровельные материалы">
+                    <div class="catalog__item-info">
+                        <h3>Кровельные материалы</h3>
+                    </div>
+                </div>
+
+                <div class="catalog__item catalog__item--gray">
+                    <img src="img/catalog3.png" alt="Фасадные и облицовочные материалы">
+                    <div class="catalog__item-info">
+                        <h3>Фасадные и <br> облицовочные материалы</h3>
+                    </div>
+                </div>
+
+                <div class="catalog__item catalog__item--green">
+                    <img src="img/catalog4.png" alt="Ландшафт и благоустройство">
+                    <div class="catalog__item-info">
+                        <h3>Ландшафт и благоустройство</h3>
+                    </div>
+                </div>
+            </div>
+
+            <button class="slider-arrow slider-arrow--right">
+                <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+        </div>
+
+        <div class="catalog__pagination">
+            <span class="p-dot active"></span>
+            <span class="p-dot"></span>
+            <span class="p-dot"></span>
+            <span class="p-dot"></span>
+            <span class="p-dot"></span>
+        </div>
+    </div>
+</section>
+
+<!--Offers-->
+
+<section class="offers-section">
+  <div class="main-container">
+    <h2 class="section-title">Лучшие предложения</h2>
+    
+    <div class="layout-grid">
+      <aside class="sidebar-nav">
+        <div class="category-list">
+          <div class="category-list__header">
+            <span>Все категории</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <ul class="category-list__items">
+            <li class="category-item category-item--active">Искусственный камень</li>
+            <li class="category-item">Каменная плитка</li>
+            <li class="category-item">Тротуарная плитка</li>
+            <li class="category-item">Облицовочный камень</li>
+            <li class="category-item">Искусственный камень</li>
+            <li class="category-item">Каменная плитка</li>
+            <li class="category-item">Тротуарная плитка</li>
+          </ul>
+        </div>
+        <div class="sidebar-promo">
+          <img src="sidebar-stone.jpg" alt="Stone Example">
+        </div>
+      </aside>
+
+      <div class="content-wrapper">
+        <div class="filter-controls">
+          <div class="filter-left">
+            <div class="dropdown-filter">Сортировать: <span class="blue-text">по популярности</span> <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="dropdown-filter">Фильтры: <span class="blue-text">показать (3)</span> <i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="filter-right">
+            <span>Выбрано: <strong class="blue-text">827 товаров</strong></span>
+            <button class="clear-btn"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+
+        <div class="product-container">
+          <button class="nav-arrow prev-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+          
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="product-card__image">
+                <img src="stone-1.jpg" alt="Atlas Stone">
+                <div class="badge-group">
+                  <span class="badge badge--blue">Официальный дилер</span>
+                  <span class="badge badge--green">Хит продаж</span>
+                </div>
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст</h3>
+                <div class="promo-line">
+                  <i class="fa-solid fa-percent"></i>
+                  <span>Акция: 2+1 на искусственный камень</span>
+                </div>
+                <a href="#" class="all-promos">Все акции</a>
+                
+                <div class="price-section">
+                  <div class="price-box">
+                    <span class="price-label">Цена за: пог. м</span>
+                    <span class="price-num">870 <sup>00</sup> <span class="currency">₽</span></span>
+                  </div>
+                  <div class="price-box">
+                    <span class="price-label">Цена за: гофротара</span>
+                    <span class="price-num">2 976 <sup>60</sup> <span class="currency">₽</span></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="price-section">
+                <div class="price-box">
+                  <span class="price-label">Цена за: пог. м</span>
+                  <span class="price-num">1 150 <sup>00</sup> <span class="currency">₽</span></span>
+                </div>
+                <div class="price-box price-box--sale">
+                  <span class="price-label">Цена за: гофротара</span>
+                  <span class="price-num">22 976 <sup>80</sup> <span class="currency">₽</span></span>
+                  <span class="old-price">1 562.05 <span class="save">- 345 ₽ (20%)</span></span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <button class="nav-arrow next-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <div class="slider-dots">
+          <span></span><span class="active"></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
