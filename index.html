@@ -202,102 +202,274 @@
 
 <!--Offers-->
 
-<section class="offers-section">
-  <div class="main-container">
-    <h2 class="section-title">Лучшие предложения</h2>
-    
-    <div class="layout-grid">
-      <aside class="sidebar-nav">
-        <div class="category-list">
-          <div class="category-list__header">
-            <span>Все категории</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
-          <ul class="category-list__items">
-            <li class="category-item category-item--active">Искусственный камень</li>
-            <li class="category-item">Каменная плитка</li>
-            <li class="category-item">Тротуарная плитка</li>
-            <li class="category-item">Облицовочный камень</li>
-            <li class="category-item">Искусственный камень</li>
-            <li class="category-item">Каменная плитка</li>
-            <li class="category-item">Тротуарная плитка</li>
-          </ul>
-        </div>
-        <div class="sidebar-promo">
-          <img src="sidebar-stone.jpg" alt="Stone Example">
-        </div>
-      </aside>
+<section class="offers">
+  <div class="container-1230">
+    <h2 class="offers__main-title">Лучшие предложения</h2>
+    <div class="offers__divider"></div>
 
-      <div class="content-wrapper">
-        <div class="filter-controls">
-          <div class="filter-left">
-            <div class="dropdown-filter">Сортировать: <span class="blue-text">по популярности</span> <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="dropdown-filter">Фильтры: <span class="blue-text">показать (3)</span> <i class="fa-solid fa-chevron-down"></i></div>
-          </div>
-          <div class="filter-right">
-            <span>Выбрано: <strong class="blue-text">827 товаров</strong></span>
-            <button class="clear-btn"><i class="fa-solid fa-xmark"></i></button>
-          </div>
-        </div>
+    <div class="offers__wrapper">
+      <button class="offers__nav offers__nav--prev">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
 
-        <div class="product-container">
-          <button class="nav-arrow prev-arrow"><i class="fa-solid fa-chevron-left"></i></button>
-          
-          <div class="product-grid">
-            <article class="product-card">
-              <div class="product-card__image">
-                <img src="stone-1.jpg" alt="Atlas Stone">
-                <div class="badge-group">
-                  <span class="badge badge--blue">Официальный дилер</span>
-                  <span class="badge badge--green">Хит продаж</span>
-                </div>
+      <div class="offers__layout">
+        <aside class="offers__sidebar">
+          <div class="side-menu">
+            <div class="side-menu__header">
+              <span>Все категории</span>
+              <i class="fa-solid fa-chevron-up"></i>
+            </div>
+            <ul class="side-menu__list">
+              <li class="side-menu__item side-menu__item--active">Искусственный камень</li>
+              <li class="side-menu__item">Каменная плитка</li>
+              <li class="side-menu__item">Тротуарная плитка</li>
+              <li class="side-menu__item">Облицовочный камень</li>
+              <li class="side-menu__item">Искусственный камень</li>
+              <li class="side-menu__item">Каменная плитка</li>
+              <li class="side-menu__item">Тротуарная плитка</li>
+            </ul>
+          </div>
+          <div class="offers__sidebar-banner">
+            <img src="img/offers1.png" alt="Texture banner">
+          </div>
+        </aside>
+
+        <div class="offers__main">
+          <div class="filter-bar">
+            <div class="filter-bar__group">
+              <div class="filter-bar__item">Сортировать: <span>по популярности</span> <i class="fa-solid fa-chevron-down"></i></div>
+              <div class="filter-bar__item">Фильтры: <span>показать (3)</span> <i class="fa-solid fa-chevron-down"></i></div>
+              <div class="filter-bar__item filter-bar__item--selection">
+                Выбрано: <span>827 товаров</span>
+                <button class="filter-bar__reset">×</button>
               </div>
-              <div class="product-card__content">
-                <h3 class="product-title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст</h3>
-                <div class="promo-line">
-                  <i class="fa-solid fa-percent"></i>
-                  <span>Акция: 2+1 на искусственный камень</span>
+            </div>
+          </div>
+
+          <div class="offers__grid">
+            <article class="p-card">
+              <div class="p-card__img">
+                <img src="img/offers2.png" alt="Atlas Stone">
+              </div>
+              <div class="p-card__badges">
+                <span class="badge badge--navy">Официальный дилер</span>
+                <span class="badge badge--green">Хит продаж</span>
+              </div>
+              <div class="p-card__content">
+                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                <div class="p-card__promo">
+                  <span class="p-card__promo-icon">%</span>
+                  <span class="p-card__promo-text">Акция. 2+1 на искусственный камень</span>
                 </div>
-                <a href="#" class="all-promos">Все акции</a>
-                
-                <div class="price-section">
-                  <div class="price-box">
-                    <span class="price-label">Цена за: пог. м</span>
-                    <span class="price-num">870 <sup>00</sup> <span class="currency">₽</span></span>
+                <a href="#" class="p-card__link">Все акции</a>
+                <div class="p-card__footer">
+                  <div class="price-block">
+                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                    <div class="price-block__main">870<span class="sup">00</span> <span class="currency">₽</span></div>
                   </div>
-                  <div class="price-box">
-                    <span class="price-label">Цена за: гофротара</span>
-                    <span class="price-num">2 976 <sup>60</sup> <span class="currency">₽</span></span>
+                  <div class="price-block">
+                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                    <div class="price-block__main">2 976<span class="sup">60</span> <span class="currency">₽</span></div>
                   </div>
                 </div>
               </div>
             </article>
 
-            <article class="product-card">
-              <div class="price-section">
-                <div class="price-box">
-                  <span class="price-label">Цена за: пог. м</span>
-                  <span class="price-num">1 150 <sup>00</sup> <span class="currency">₽</span></span>
+            <article class="p-card">
+              <div class="p-card__img">
+                <img src="img/offers3.png" alt="Atlas Stone">
+              </div>
+              <div class="p-card__badges">
+                <span class="badge badge--blue">Новинка</span>
+                <span class="badge badge--green">Есть в наличии</span>
+                <span class="badge badge--red">Товар по акции</span>
+              </div>
+              <div class="p-card__content">
+                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                <div class="p-card__promo">
+                  <span class="p-card__promo-icon">%</span>
+                  <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
                 </div>
-                <div class="price-box price-box--sale">
-                  <span class="price-label">Цена за: гофротара</span>
-                  <span class="price-num">22 976 <sup>80</sup> <span class="currency">₽</span></span>
-                  <span class="old-price">1 562.05 <span class="save">- 345 ₽ (20%)</span></span>
+                <a href="#" class="p-card__link">Все акции</a>
+                <div class="p-card__footer">
+                  <div class="price-block">
+                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                    <div class="price-block__main">1 150<span class="sup">00</span> <span class="currency">₽</span></div>
+                  </div>
+                  <div class="price-block">
+                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                    <div class="price-block__main">22 976<span class="sup">80</span> <span class="currency">₽</span></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="p-card">
+              <div class="p-card__img">
+                <img src="img/offers4.png" alt="Atlas Stone">
+              </div>
+              <div class="p-card__badges">
+                <span class="badge badge--red">Товар по акции</span>
+                <span class="badge badge--blue">Новинка</span>
+                <span class="badge badge--navy">Официальный</span>
+              </div>
+              <div class="p-card__content">
+                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                <div class="p-card__promo">
+                  <span class="p-card__promo-icon">%</span>
+                  <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+                </div>
+                <a href="#" class="p-card__link">Все акции</a>
+                <div class="p-card__footer">
+                  <div class="price-block">
+                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                    <div class="price-block__main price-block__main--sale">1 200<span class="sup">00</span> <span class="currency">₽</span></div>
+                    <div class="price-block__old">
+                      <span class="old-val">1 562.05</span>
+                      <span class="save-val">345 ₽ (20%)</span>
+                    </div>
+                  </div>
+                  <div class="price-block">
+                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                    <div class="price-block__main price-block__main--sale">10 500<span class="sup">80</span> <span class="currency">₽</span></div>
+                    <div class="price-block__old">
+                      <span class="old-val">1 562.05</span>
+                      <span class="save-val">345 ₽ (20%)</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </article>
           </div>
-
-          <button class="nav-arrow next-arrow"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
+      </div>
 
-        <div class="slider-dots">
-          <span></span><span class="active"></span><span></span><span></span>
-        </div>
+      <button class="offers__nav offers__nav--next">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="pagination">
+      <div class="pagination__dots">
+        <span class="dot"></span>
+        <span class="dot dot--active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
       </div>
     </div>
   </div>
 </section>
+
+<!--Aksiya-->
+
+<section class="promotions">
+  <div class="promotions__container">
+    <div class="promotions__header">
+      <h1 class="promotions__title">Акции</h1>
+      <div class="promotions__line"></div>
+    </div>
+
+    <div class="promotions__slider-wrapper">
+      <button class="slider-btn slider-btn--prev">
+        <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
+          <path d="M12 1L1 12L12 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="promotions__grid">
+        <article class="promo-card promo-card--gray">
+          <img src="img/aksi1.png" alt="Суперакция" class="promo-card__bg">
+          <div class="promo-card__overlay"></div>
+          <div class="promo-card__content">
+            <h3 class="promo-card__name">Суперакция с супреценами</h3>
+            <p class="promo-card__text">Купи цемент — получи бесплатную доставку</p>
+            <div class="timer">
+              <span class="timer__label">До конца акции</span>
+              <div class="timer__display">
+                <div class="timer__unit"><span>05</span>дней</div>
+                <div class="timer__unit"><span>06</span>час</div>
+                <div class="timer__unit"><span>23</span>мин</div>
+                <div class="timer__unit"><span>52</span>сек</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="promo-card promo-card--green">
+          <img src="img/aksi2.png" alt="Metrolite" class="promo-card__bg">
+          <div class="promo-card__overlay"></div>
+          <div class="promo-card__content">
+            <h3 class="promo-card__name">Metrolite по суперценам</h3>
+            <p class="promo-card__text">Купи цемент — получи бесплатную доставку</p>
+            <div class="timer">
+               <span class="timer__label">До конца акции</span>
+               <div class="timer__display">
+                  <div class="timer__unit"><span>05</span>дней</div>
+                  <div class="timer__unit"><span>06</span>час</div>
+                  <div class="timer__unit"><span>23</span>мин</div>
+                  <div class="timer__unit"><span>52</span>сек</div>
+               </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="promo-card promo-card--red">
+          <div class="promo-card__icon-wrap">
+            <img src="img/aksi3.png" alt="Card icon">
+          </div>
+          <div class="promo-card__overlay"></div>
+          <div class="promo-card__content">
+            <h3 class="promo-card__name">Получи скидочную карту</h3>
+            <p class="promo-card__text">Скидочная карта Unimart в подарок</p>
+            <div class="timer">
+               <span class="timer__label">До конца акции</span>
+               <div class="timer__display">
+                  <div class="timer__unit"><span>05</span>дней</div>
+                  <div class="timer__unit"><span>06</span>час</div>
+                  <div class="timer__unit"><span>23</span>мин</div>
+                  <div class="timer__unit"><span>52</span>сек</div>
+               </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="promo-card promo-card--brown">
+          <img src="img/aksi4.png" alt="Metrolite" class="promo-card__bg">
+          <div class="promo-card__overlay"></div>
+          <div class="promo-card__content">
+            <h3 class="promo-card__name">Metrolite по суперценам</h3>
+            <p class="promo-card__text">Композитная черепица Metrolite — от 489 руб/лист!</p>
+            <div class="timer">
+               <span class="timer__label">До конца акции</span>
+               <div class="timer__display">
+                  <div class="timer__unit"><span>05</span>дней</div>
+                  <div class="timer__unit"><span>06</span>час</div>
+                  <div class="timer__unit"><span>23</span>мин</div>
+                  <div class="timer__unit"><span>52</span>сек</div>
+               </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <button class="slider-btn slider-btn--next">
+        <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
+          <path d="M1 1L12 12L1 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="promotions__pagination">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
 
 </body>
 </html>

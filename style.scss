@@ -670,188 +670,511 @@ $text-black: #000000;
 
 //Offers//
 
-$font-main: 'Open Sans', sans-serif;
-$c-blue: #4A90E2;
-$c-red: #E30613;
-$c-gray-bg: #F3F3F3;
-$c-gray-text: #9F9F9F;
-$c-dark-text: #3D3D3D;
-$c-border: #DDDDDD;
 
-.main-container {
-  width: 1230px; // Figma Line 9 width
+// Figma Variables
+$color-black: #000000;
+$color-blue-link: #358BC5; 
+$color-red-main: #BC0010;  
+$color-border: #EBEBEB;
+$color-bg-sidebar: #F8F8F8;
+$color-text-gray: #999999;
+$color-text-dark: #333333;
+$color-yellow-sale: #FFF200;
+$color-green-save: #47A13E;
+
+.container-1230 {
+  max-width: 1230px;
   margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
-.section-title {
-  font-family: $font-main;
-  font-size: 34px; // Figma Screenshot 3
-  font-weight: 400;
-  color: #000;
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid $c-border; // Figma Screenshot 4
-}
+.offers {
+  padding: 60px 0;
+  font-family: 'Open Sans', sans-serif;
 
-.layout-grid {
-  display: flex;
-  gap: 20px;
-}
+  &__main-title {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $color-black;
+    margin-bottom: 25px;
+  }
 
-// Sidebar
-.sidebar-nav {
-  width: 308px; // Figma Screenshot 5
-  
-  .category-list {
+  &__divider {
+    height: 1px;
+    background-color: #DDDDDD;
+    margin-bottom: 40px;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: $color-red-main;
+    cursor: pointer;
+    z-index: 5;
+    padding: 10px;
+    transition: opacity 0.3s;
+
+    &:hover { opacity: 0.7; }
+    &--prev { left: -45px; }
+    &--next { right: -45px; }
+  }
+
+  &__layout {
+    display: flex;
+    border: 1px solid $color-border;
+    width: 100%;
     background: #fff;
-    border: 1px solid #eee;
-    
-    &__header {
-      padding: 10px 17px 10px 20px; // Screenshot 9
-      display: flex;
-      justify-content: space-between;
-      color: $c-gray-text;
+  }
+
+  &__sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    border-right: 1px solid $color-border;
+    background-color: $color-bg-sidebar;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Side Menu
+.side-menu {
+  &__header {
+    height: 48px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-text-gray;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 12px 20px;
+    font-size: 14px;
+    color: $color-text-gray;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    transition: all 0.2s;
+
+    &:hover { color: $color-text-dark; }
+
+    &--active {
+      background-color: #fff;
       font-weight: 600;
-      font-size: 14px;
+      border-left-color: $color-red-main;
+      color: $color-text-dark;
     }
   }
 }
 
-.category-item {
-  list-style: none;
-  padding: 10px 20px; // Screenshot 9
-  font-size: 14px;
-  color: $c-gray-text;
-  cursor: pointer;
-  border-left: 3px solid transparent;
-
-  &--active {
-    background: $c-gray-bg; // Screenshot 9 fon rangi
-    color: $c-dark-text;
-    font-weight: 600;
-    border-left-color: $c-red; // Qizil indikator
+.offers__sidebar-banner {
+  padding: 15px;
+  margin-top: auto;
+  img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
   }
-}
-
-.sidebar-promo {
-  margin-top: 20px;
-  img { width: 268px; height: 268px; object-fit: cover; } // Screenshot 10
 }
 
 // Filter Bar
-.filter-controls {
+.filter-bar {
+  border-bottom: 1px solid $color-border;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  font-size: 14px;
+  justify-content: flex-end;
+  height: 48px;
 
-  .filter-left { display: flex; gap: 30px; }
-  .blue-text { color: $c-blue; }
-  .dropdown-filter { cursor: pointer; i { font-size: 10px; margin-left: 5px; color: #999; } }
-  
-  .clear-btn {
-    border: none; background: none; color: $c-red; 
-    margin-left: 10px; cursor: pointer;
-  }
-}
+  &__group { display: flex; }
 
-// Product Grid & Card
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 308px); // Figma Frame 521
-  gap: 24px; // Frame 521 gap
-}
+  &__item {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid $color-border;
+    font-size: 13px;
+    color: $color-text-dark;
 
-.product-card {
-  background: #fff;
-  border: 1px solid #EEEEEE;
-  padding: 20px 20px 32px 20px; // Screenshot 12 (top/side: 20, bottom: 32)
-  position: relative;
-  transition: box-shadow 0.3s;
+    span { color: $color-blue-link; margin-left: 5px; cursor: pointer; }
+    i { color: #CCC; margin-left: 10px; font-size: 11px; }
 
-  &:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-
-  &__image {
-    position: relative;
-    margin-bottom: 15px;
-    img { width: 268px; height: 268px; object-fit: cover; }
-    
-    .badge-group {
-      position: absolute; bottom: 0; left: 0; display: flex; gap: 4px;
+    &--selection {
+      span { font-weight: 700; color: $color-text-dark; }
     }
   }
 
-  .product-title {
+  &__reset {
+    background: none;
+    border: none;
+    border-left: 1px solid $color-border;
+    color: $color-red-main;
+    font-size: 24px;
+    padding: 0 20px;
+    cursor: pointer;
+  }
+}
+
+// Product Cards
+.offers__grid {
+  display: flex;
+}
+
+.p-card {
+  flex: 1;
+  padding: 20px;
+  border-right: 1px solid $color-border;
+  display: flex;
+  flex-direction: column;
+
+  &:last-child { border-right: none; }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 15px;
+    img { width: 100%; height: auto; display: block; }
+  }
+
+  &__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 12px;
+    min-height: 40px;
+
+    .badge {
+      padding: 4px 8px;
+      font-size: 11px;
+      color: #fff;
+      font-weight: 600;
+      &--navy { background: #0E2F83; }
+      &--green { background: #47A13E; }
+      &--blue { background: #627DC1; }
+      &--red { background: #BC0012; }
+    }
+  }
+
+  &__title {
     font-size: 14px;
-    color: $c-blue;
+    color: $color-blue-link;
     line-height: 1.4;
-    height: 60px; // 3 qator matn uchun
-    margin-bottom: 15px;
     font-weight: 400;
+    margin-bottom: 12px;
+    height: 58px;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover { text-decoration: underline; }
+  }
+
+  &__promo {
+    display: flex;
+    align-items: center;
+    color: $color-red-main;
+    font-size: 12px;
+    margin-bottom: 4px;
+    &-icon { font-weight: 800; font-size: 16px; margin-right: 5px; }
+  }
+
+  &__link {
+    font-size: 12px;
+    color: $color-blue-link;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    gap: 15px;
   }
 }
 
-.promo-line {
-  color: $c-red;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 4px;
-}
+// Price Block
+.price-block {
+  flex: 1;
 
-.all-promos {
-  font-size: 11px;
-  color: $c-blue;
-  text-decoration: underline;
-  margin-bottom: 15px;
-  display: inline-block;
-}
+  &__label {
+    font-size: 11px;
+    color: $color-red-main;
+    margin-bottom: 5px;
+    span { color: $color-blue-link; display: block; }
+  }
 
-// Price Styling
-.price-section {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #F0F0F0;
-  padding-top: 12px;
-
-  .price-box {
-    .price-label { display: block; font-size: 10px; color: $c-gray-text; margin-bottom: 4px; }
-    .price-num {
-      font-size: 18px; font-weight: 700;
-      sup { font-size: 10px; top: -0.5em; }
-      .currency { font-size: 14px; font-weight: 400; }
-    }
+  &__main {
+    font-size: 20px;
+    font-weight: 800;
+    color: $color-black;
+    line-height: 1;
+    display: inline-block;
 
     &--sale {
-      .price-num { background: #FFF9C4; padding: 2px 4px; } // Sariq fonli narx
-      .old-price { 
-        display: block; font-size: 10px; text-decoration: line-through; color: #999;
-        .save { color: #43A047; text-decoration: none; display: block; }
-      }
+      background-color: $color-yellow-sale;
+      padding: 2px 4px;
+    }
+
+    .sup { font-size: 12px; vertical-align: super; margin-left: 1px; }
+    .currency { font-weight: 400; font-size: 16px; }
+  }
+
+  &__old {
+    margin-top: 8px;
+    .old-val {
+      font-size: 11px;
+      text-decoration: line-through;
+      color: #999;
+      background: $color-yellow-sale;
+      padding: 0 2px;
+    }
+    .save-val {
+      display: block;
+      color: $color-green-save;
+      font-weight: 700;
+      font-size: 11px;
+      margin-top: 2px;
     }
   }
 }
 
-// Navigation & Dots
-.nav-arrow {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  border: none; background: none; color: $c-red; font-size: 24px; cursor: pointer;
-  &.prev-arrow { left: -40px; }
-  &.next-arrow { right: -40px; }
-}
-
-.slider-dots {
-  display: flex; justify-content: center; gap: 8px; margin-top: 30px;
-  span {
-    width: 8px; height: 8px; border-radius: 50%; background: #DDD;
-    &.active { background: $c-red; }
+// Pagination
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  &__dots {
+    display: flex;
+    gap: 10px;
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #DDDDDD;
+      cursor: pointer;
+      &--active { background-color: $color-red-main; }
+    }
   }
 }
 
-.badge {
-  padding: 3px 8px; font-size: 10px; color: #fff;
-  &--blue { background: #004691; }
-  &--green { background: #28A745; }
+
+//Aksiya//
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+// Figma o'zgaruvchilari
+$primary-red: #BC0010;
+$text-black: #000000;
+$text-white: #FFFFFF;
+$divider-color: #DDDDDD;
+$font-family: 'Open Sans', sans-serif;
+
+.promotions {
+  padding: 60px 0;
+  font-family: $font-family;
+  background-color: #ffffff;
+
+  &__container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  &__header {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-size: 34px;
+    font-weight: 400;
+    color: $text-black;
+    margin: 0 0 12px 0;
+  }
+
+  &__line {
+    height: 2px;
+    background-color: $divider-color;
+    width: 100%;
+    border: none;
+  }
+
+  &__slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  &__grid {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    overflow: hidden; // Slider uchun
+  }
 }
 
+.promo-card {
+  width: 292px;
+  height: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 4px;
+  flex-shrink: 0;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  // Gradient qatlami
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  // --- HAR BIR RANG UCHUN GRADIENTLAR ---
+  &--gray &__overlay {
+    background: linear-gradient(to top, rgba(108, 92, 85, 0.9) 0%, rgba(108, 92, 85, 0) 100%);
+  }
+  
+  &--green &__overlay {
+    background: linear-gradient(to top, rgba(46, 105, 34, 0.9) 0%, rgba(46, 105, 34, 0) 100%);
+  }
+
+  &--brown &__overlay {
+    background: linear-gradient(to top, rgba(76, 46, 35, 0.9) 0%, rgba(76, 46, 35, 0) 100%);
+  }
+
+  &--red {
+    background-color: $primary-red;
+    & &__overlay {
+      background: linear-gradient(to top, rgba(188, 0, 16, 0.9) 0%, rgba(188, 0, 16, 0) 100%);
+    }
+    
+    .promo-card__icon-wrap {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      img { width: 110px; }
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 3;
+    color: $text-white;
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0 0 10px 0;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 24px 0;
+    opacity: 0.95;
+  }
+}
+
+.timer {
+  &__label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  &__display {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__unit {
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.2;
+    
+    span {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+  }
+}
+
+.slider-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+
+  &:hover { transform: scale(1.1); }
+  &:active { transform: scale(0.9); }
+}
+
+.promotions__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #EBEBEB;
+    cursor: pointer;
+    border: none;
+
+    &.active {
+      background-color: $primary-red;
+    }
+  }
+}
