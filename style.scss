@@ -741,8 +741,8 @@ $color-green-save: #47A13E;
   &__sidebar {
     width: 280px;
     flex-shrink: 0;
-    border-right: 1px solid $color-border;
-    background-color: $color-bg-sidebar;
+    
+    background-color: #F3F3F3;
     display: flex;
     flex-direction: column;
   }
@@ -762,10 +762,10 @@ $color-green-save: #47A13E;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: $color-text-gray;
-    font-size: 13px;
+    color: #9F9F9F;
+    font-size: 14px;
     font-weight: 600;
-    border-bottom: 1px solid $color-border;
+    
   }
 
   &__list {
@@ -777,15 +777,16 @@ $color-green-save: #47A13E;
   &__item {
     padding: 12px 20px;
     font-size: 14px;
-    color: $color-text-gray;
+    color: #9F9F9F;
     cursor: pointer;
     border-left: 4px solid transparent;
     transition: all 0.2s;
+    font-weight: 400;
 
-    &:hover { color: $color-text-dark; }
+    
 
     &--active {
-      background-color: #fff;
+      background-color: #F3F3F3;
       font-weight: 600;
       border-left-color: $color-red-main;
       color: $color-text-dark;
@@ -797,6 +798,7 @@ $color-green-save: #47A13E;
   padding: 15px;
   margin-top: auto;
   img {
+    height: 268px;
     width: 100%;
     display: block;
     object-fit: cover;
@@ -817,22 +819,21 @@ $color-green-save: #47A13E;
     display: flex;
     align-items: center;
     border-left: 1px solid $color-border;
-    font-size: 13px;
-    color: $color-text-dark;
+    font-weight: 400;
+    font-size: 12px;
+    color: #757575;
 
-    span { color: $color-blue-link; margin-left: 5px; cursor: pointer; }
-    i { color: #CCC; margin-left: 10px; font-size: 11px; }
+    span { color: #358BC5; margin-left: 5px; cursor: pointer; }
+    i { color: #787878; margin-left: 10px; font-size: 11px; }
 
-    &--selection {
-      span { font-weight: 700; color: $color-text-dark; }
-    }
+   
   }
 
   &__reset {
     background: none;
     border: none;
-    border-left: 1px solid $color-border;
-    color: $color-red-main;
+    
+    color: #BC0010;
     font-size: 24px;
     padding: 0 20px;
     cursor: pointer;
@@ -842,49 +843,64 @@ $color-green-save: #47A13E;
 // Product Cards
 .offers__grid {
   display: flex;
+  width: 100%; // Konteynerdan chiqib ketmasligi uchun
+  flex-direction: row;
 }
 
 .p-card {
-  flex: 1;
+  flex: 1 0 33.33%;
   padding: 20px;
-  border-right: 1px solid $color-border;
+  border-right: 1px solid #EBEBEB;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
-  &:last-child { border-right: none; }
+  &:last-child {
+    border-right: none;
+  }
+
 
   &__img {
     width: 100%;
     margin-bottom: 15px;
-    img { width: 100%; height: auto; display: block; }
+    object-fit: cover;
+    img { width: 100%; height: 268px; display: block; }
   }
 
-  &__badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-bottom: 12px;
-    min-height: 40px;
+ &__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px; 
+  margin-bottom: 12px;
+  min-height: 22px; 
 
-    .badge {
-      padding: 4px 8px;
-      font-size: 11px;
-      color: #fff;
-      font-weight: 600;
-      &--navy { background: #0E2F83; }
-      &--green { background: #47A13E; }
-      &--blue { background: #627DC1; }
-      &--red { background: #BC0012; }
-    }
+  .badge {
+    padding: 2px 5px; 
+    font-size: 10px; 
+    line-height: 14px;
+    color: #fff;
+    font-weight: 400; 
+    text-transform: none; 
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0; 
+
+    &--navy { background: #0E2F83; }   
+    &--green { background: #1CA200; }  
+    &--blue { background: #627DC1; }   
+    &--red { background: #BC0012; }    
+    &--green2 {background: #75CC4F;}
   }
+}
 
   &__title {
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
-    color: $color-blue-link;
-    line-height: 1.4;
     font-weight: 400;
+    line-height: 18px;
+    color: #358BC5;
     margin-bottom: 12px;
-    height: 58px;
+    height: 72px;
     overflow: hidden;
     cursor: pointer;
     &:hover { text-decoration: underline; }
@@ -892,19 +908,46 @@ $color-green-save: #47A13E;
 
   &__promo {
     display: flex;
-    align-items: center;
-    color: $color-red-main;
-    font-size: 12px;
-    margin-bottom: 4px;
-    &-icon { font-weight: 800; font-size: 16px; margin-right: 5px; }
+    align-items: flex-start;
+    color: #BC0010;
+    margin-bottom: 8px;
+    min-height: 28px;
+    font-size: 14px;
+    &-icon {
+    font-size: 14px; // Figma: % belgisi matn bilan bir xil o'lchamda
+    font-weight: 400; // Figma bo'yicha qalin emas
+    margin-right: 4px;
+    line-height: 14px; 
+    margin-top: 2px; // Matn bilan vizual tekislash uchun
+  }
+  &-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px; // Figma: 14px
+    font-weight: 400; // Figma: 400
+    line-height: 14px; // Figma: 14px
+    text-decoration: none;
+    
+    // Figma'da matn kengligi cheklangan (244px)
+    max-width: 244px;
+    display: block;
+  }
   }
 
   &__link {
+    font-family: 'Open Sans', sans-serif;
     font-size: 12px;
-    color: $color-blue-link;
-    text-decoration: underline;
+    font-weight: 400;
+    line-height: 18px;
+    color: #358BC5;
+    
     margin-bottom: 20px;
     display: inline-block;
+    cursor: pointer;
+
+    &:hover {
+    text-decoration: underline; 
+    
+  }
   }
 
   &__footer {
@@ -919,43 +962,60 @@ $color-green-save: #47A13E;
   flex: 1;
 
   &__label {
-    font-size: 11px;
-    color: $color-red-main;
-    margin-bottom: 5px;
-    span { color: $color-blue-link; display: block; }
+    display: flex;
+    gap: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #BC0010;
+    margin-bottom: 4px;
+    span { color: #358BC5; display: inline-block; }
   }
 
   &__main {
+    font-family: 'Open Sans', sans-serif;
     font-size: 20px;
-    font-weight: 800;
-    color: $color-black;
-    line-height: 1;
+    font-weight: 700;
+    color: #000000;
+    line-height: 24px;
     display: inline-block;
-
-    &--sale {
-      background-color: $color-yellow-sale;
-      padding: 2px 4px;
+    span {
+        color: #9F9F9F;
+        font-size: 12px;
+        
     }
+
 
     .sup { font-size: 12px; vertical-align: super; margin-left: 1px; }
     .currency { font-weight: 400; font-size: 16px; }
   }
 
   &__old {
-    margin-top: 8px;
+    margin-top: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
     .old-val {
+      font-family: 'Open Sans', sans-serif;
       font-size: 11px;
       text-decoration: line-through;
-      color: #999;
-      background: $color-yellow-sale;
-      padding: 0 2px;
+      white-space: nowrap;
+      color: #242424;
+      background: #FFE326;
+      
+      padding: 0 ;
     }
     .save-val {
-      display: block;
-      color: $color-green-save;
-      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      color: #47A13E;
+      font-weight: 600;
+      line-height: 14px;
       font-size: 11px;
       margin-top: 2px;
+      white-space: nowrap;
     }
   }
 }
@@ -978,6 +1038,8 @@ $color-green-save: #47A13E;
     }
   }
 }
+
+
 
 
 //Aksiya//
