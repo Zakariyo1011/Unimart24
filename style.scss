@@ -914,11 +914,11 @@ $color-green-save: #47A13E;
     min-height: 28px;
     font-size: 14px;
     &-icon {
-    font-size: 14px; // Figma: % belgisi matn bilan bir xil o'lchamda
-    font-weight: 400; // Figma bo'yicha qalin emas
+    font-size: 14px; 
+    font-weight: 400; 
     margin-right: 4px;
     line-height: 14px; 
-    margin-top: 2px; // Matn bilan vizual tekislash uchun
+    margin-top: 2px; 
   }
   &-text {
     font-family: 'Open Sans', sans-serif;
@@ -927,7 +927,7 @@ $color-green-save: #47A13E;
     line-height: 14px; // Figma: 14px
     text-decoration: none;
     
-    // Figma'da matn kengligi cheklangan (244px)
+    
     max-width: 244px;
     display: block;
   }
@@ -1044,9 +1044,8 @@ $color-green-save: #47A13E;
 
 //Aksiya//
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
-// Figma o'zgaruvchilari
+// O'zgaruvchilar
 $primary-red: #BC0010;
 $text-black: #000000;
 $text-white: #FFFFFF;
@@ -1054,7 +1053,7 @@ $divider-color: #DDDDDD;
 $font-family: 'Open Sans', sans-serif;
 
 .promotions {
-  padding: 60px 0;
+  padding: 80px 0;
   font-family: $font-family;
   background-color: #ffffff;
 
@@ -1062,181 +1061,226 @@ $font-family: 'Open Sans', sans-serif;
     max-width: 1350px;
     margin: 0 auto;
     padding: 0 15px;
+    display: flex;
+    flex-direction: column; // Elementlarni ustma-ust taxlash
+    gap: 80px; // Figma: Frame 470 va Frame 610 orasi
   }
 
   &__header {
-    margin-bottom: 40px;
+    width: 1230px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 15px;
+
   }
 
   &__title {
-    font-size: 34px;
-    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 34px; // Figma: Size 34px
+    font-weight: 400; // Figma: Weight 400
+    line-height: 26px; // Figma: Line height 26px
     color: $text-black;
-    margin: 0 0 12px 0;
+    margin: 0;
+    padding: 0;
   }
 
   &__line {
-    height: 2px;
+    width: 100%; // Header kengligiga (1230px) 
+    height: 2px; // Figma: Border 2px
     background-color: $divider-color;
-    width: 100%;
     border: none;
+    margin: 0;
   }
 
   &__slider-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 30px;
+    gap: 20px;
+    width: 100%;
   }
 
   &__grid {
-    display: flex;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 4 ta teng ustun
+    gap: 30px;
     flex-grow: 1;
-    overflow: hidden; // Slider uchun
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px; // Figma: Frame 610 va Pagination orasi
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #EBEBEB;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &.active {
+        background-color: $primary-red;
+      }
+    }
   }
 }
 
 .promo-card {
-  width: 292px;
-  height: 400px;
+  width: 292px;   // Figma: Width 292px
+  height: 400px;  // Figma: Height 400px
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 24px;
+  padding: 24px;  // Figma: Padding 24px
   box-sizing: border-box;
   overflow: hidden;
-  border-radius: 4px;
-  flex-shrink: 0;
+  border-radius: 2px;
+  color: #FFFFFF;
 
   &__bg {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 0;
   }
 
-  // Gradient qatlami
   &__overlay {
     position: absolute;
     inset: 0;
     z-index: 1;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
   }
 
-  // --- HAR BIR RANG UCHUN GRADIENTLAR ---
+  // --- FIGMA GRADIENTLARI ---
+  
+  // 1-kartochka (Kulrang/Jigarrang gradient)
   &--gray &__overlay {
-    background: linear-gradient(to top, rgba(108, 92, 85, 0.9) 0%, rgba(108, 92, 85, 0) 100%);
+    background: linear-gradient(180deg, rgba(173, 173, 173, 0) 0%, #6C6C6C 100%); 
+    opacity: 0.8; // Figma: 20% qatlami borligini hisobga olib
   }
   
+  // 2-kartochka (Yashil gradient)
   &--green &__overlay {
-    background: linear-gradient(to top, rgba(46, 105, 34, 0.9) 0%, rgba(46, 105, 34, 0) 100%);
+    background: linear-gradient(180deg, rgba(170, 161, 79, 0) 0%, #AAA14F 100%);
   }
 
-  &--brown &__overlay {
-    background: linear-gradient(to top, rgba(76, 46, 35, 0.9) 0%, rgba(76, 46, 35, 0) 100%);
-  }
-
+  // 3-kartochka (Qizil - Radial va Linear aralashmasi)
   &--red {
-    background-color: $primary-red;
-    & &__overlay {
-      background: linear-gradient(to top, rgba(188, 0, 16, 0.9) 0%, rgba(188, 0, 16, 0) 100%);
+    background-color: #C6342A; // Figma: Red background
+    .promo-card__overlay {
+      background: linear-gradient(180deg, rgba(205, 61, 51, 0) 0%, #CD3D33 100%);
     }
     
     .promo-card__icon-wrap {
       position: absolute;
-      top: 40%;
+      top: 40%; // Figma: Joylashuvi markazroq
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
-      img { width: 110px; }
+      img { 
+        width: 120px; 
+        height: auto;
+        object-fit: contain;
+      }
     }
+  }
+
+  
+  &--brown &__overlay {
+    background: linear-gradient(180deg, rgba(130, 97, 84, 0) 0%, #826154 100%);
   }
 
   &__content {
     position: relative;
     z-index: 3;
-    color: $text-white;
+    display: flex;
+    flex-direction: column;
+    // Figma: Sarlavha, matn va timer orasidagi umumiy gap
+    gap: 10px; 
   }
 
   &__name {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 24px;
-    margin: 0 0 10px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700; // Figma: Weight 700
+    font-size: 18px;  // Figma: Size 18px
+    line-height: 24px; // Figma: Line height 24px
+    color: #FFFFFF;
+    margin: 0;
   }
 
   &__text {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.3;
-    margin: 0 0 24px 0;
-    opacity: 0.95;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600; // Figma: Weight 600
+    font-size: 14px;  // Figma: Size 14px
+    line-height: 18px; // Figma: Line height 18px
+    color: #FFFFFF;
+    margin: 0;
+    
+    margin-bottom: 4px; 
   }
 }
 
+// Timer qismi 
 .timer {
+  display: flex;
+  align-items: flex-end; // Raqamlar va "До конца" pastki chiziqda tekislanadi
+  gap: 8px; // Figma: Frame 583 va Frame 582 orasi
+
   &__label {
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 8px;
-    letter-spacing: 0.05em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600; // Figma: Weight 600
+    font-size: 16px;  // Figma: Size 16px
+    line-height: 16px; // Figma: Line height 16px
+    width: 75px;      // Figma: Width 75px
+    color: #FFFFFF;
+    margin: 0;
   }
 
   &__display {
     display: flex;
-    gap: 12px;
+    align-items: center;
+    gap: 2px; // Figma: Frame 582 ichidagi elementlar orasi (Gap 2px)
   }
 
   &__unit {
-    font-size: 10px;
-    text-align: center;
-    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 34px; // Figma: Har bir unit kengligi
+
     
     span {
-      display: block;
-      font-size: 18px;
+      font-family: 'Open Sans', sans-serif;
       font-weight: 700;
-      margin-bottom: 2px;
+      font-size: 20px; 
+      line-height: 20px;
+      color: #FFFFFF;
     }
+
+    
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 2px;
   }
 }
+
 
 .slider-btn {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 10px;
+  padding: 0;
   flex-shrink: 0;
-  transition: transform 0.2s ease;
+  transition: opacity 0.2s;
 
-  &:hover { transform: scale(1.1); }
-  &:active { transform: scale(0.9); }
-}
-
-.promotions__pagination {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 32px;
-
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #EBEBEB;
-    cursor: pointer;
-    border: none;
-
-    &.active {
-      background-color: $primary-red;
-    }
-  }
+  &:hover { opacity: 0.6; }
 }
