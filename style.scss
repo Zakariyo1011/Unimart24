@@ -1818,3 +1818,764 @@ $divider-color: #DDDDDD;
   transition: transform 0.2s;
   &:hover { transform: scale(1.1); }
 }
+
+
+
+//Xitttt//
+
+
+// Figma Variables
+$color-black: #000000;
+$color-blue-link: #358BC5; 
+$color-red-main: #BC0010;  
+$color-border: #EBEBEB;
+$color-bg-sidebar: #F8F8F8;
+$color-text-gray: #999999;
+$color-text-dark: #333333;
+$color-yellow-sale: #FFF200;
+$color-green-save: #47A13E;
+
+.container-1230 {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.offers {
+  padding: 60px 0;
+  font-family: 'Open Sans', sans-serif;
+
+  &__main-title {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $color-black;
+    margin-bottom: 25px;
+  }
+
+  &__divider {
+    height: 1px;
+    background-color: #DDDDDD;
+    margin-bottom: 40px;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: $color-red-main;
+    cursor: pointer;
+    z-index: 5;
+    padding: 10px;
+    transition: opacity 0.3s;
+
+    &:hover { opacity: 0.7; }
+    &--prev { left: -45px; }
+    &--next { right: -45px; }
+  }
+
+  &__layout {
+    display: flex;
+    border: 1px solid $color-border;
+    width: 100%;
+    background: #fff;
+  }
+
+  &__sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    
+    background-color: #F3F3F3;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Side Menu
+.side-menu {
+  &__header {
+    height: 48px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #9F9F9F;
+    font-size: 14px;
+    font-weight: 600;
+    
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #9F9F9F;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    transition: all 0.2s;
+    font-weight: 400;
+
+    
+
+    &--active {
+      background-color: #F3F3F3;
+      font-weight: 600;
+      border-left-color: $color-red-main;
+      color: $color-text-dark;
+    }
+  }
+}
+
+.offers__sidebar-banner {
+  padding: 15px;
+  margin-top: auto;
+  img {
+    height: 268px;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+// Filter Bar
+.filter-bar {
+  border-bottom: 1px solid $color-border;
+  display: flex;
+  justify-content: flex-end;
+  height: 48px;
+
+  &__group { display: flex; }
+
+  &__item {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid $color-border;
+    font-weight: 400;
+    font-size: 12px;
+    color: #757575;
+
+    span { color: #358BC5; margin-left: 5px; cursor: pointer; }
+    i { color: #787878; margin-left: 10px; font-size: 11px; }
+
+   
+  }
+
+  &__reset {
+    background: none;
+    border: none;
+    
+    color: #BC0010;
+    font-size: 24px;
+    padding: 0 20px;
+    cursor: pointer;
+  }
+}
+
+// Product Cards
+.offers__grid {
+  display: flex;
+  width: 100%; // Konteynerdan chiqib ketmasligi uchun
+  flex-direction: row;
+}
+
+.p-card {
+  flex: 1 0 33.33%;
+  padding: 20px;
+  border-right: 1px solid #EBEBEB;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  &:last-child {
+    border-right: none;
+  }
+
+
+  &__img {
+    width: 100%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    img { width: 100%; height: 268px; display: block; }
+  }
+
+ &__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px; 
+  margin-bottom: 12px;
+  min-height: 22px; 
+
+  .badge {
+    padding: 2px 5px; 
+    font-size: 10px; 
+    line-height: 14px;
+    color: #fff;
+    font-weight: 400; 
+    text-transform: none; 
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0; 
+
+    &--navy { background: #0E2F83; }   
+    &--green { background: #1CA200; }  
+    &--blue { background: #627DC1; }   
+    &--red { background: #BC0012; }    
+    &--green2 {background: #75CC4F;}
+  }
+}
+
+  &__title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #358BC5;
+    margin-bottom: 12px;
+    height: 72px;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover { text-decoration: underline; }
+  }
+
+  &__promo {
+    display: flex;
+    align-items: flex-start;
+    color: #BC0010;
+    margin-bottom: 8px;
+    min-height: 28px;
+    font-size: 14px;
+    &-icon {
+    font-size: 14px; 
+    font-weight: 400; 
+    margin-right: 4px;
+    line-height: 14px; 
+    margin-top: 2px; 
+  }
+  &-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px; // Figma: 14px
+    font-weight: 400; // Figma: 400
+    line-height: 14px; // Figma: 14px
+    text-decoration: none;
+    
+    
+    max-width: 244px;
+    display: block;
+  }
+  }
+
+  &__link {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #358BC5;
+    
+    margin-bottom: 20px;
+    display: inline-block;
+    cursor: pointer;
+
+    &:hover {
+    text-decoration: underline; 
+    
+  }
+  }
+
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    gap: 15px;
+  }
+}
+
+// Price Block
+.price-block {
+  flex: 1;
+
+  &__label {
+    display: flex;
+    gap: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #BC0010;
+    margin-bottom: 4px;
+    span { color: #358BC5; display: inline-block; }
+  }
+
+  &__main {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    line-height: 24px;
+    display: inline-block;
+    span {
+        color: #9F9F9F;
+        font-size: 12px;
+        
+    }
+
+
+    .sup { font-size: 12px; vertical-align: super; margin-left: 1px; }
+    .currency { font-weight: 400; font-size: 16px; }
+  }
+
+  &__old {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    .old-val {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 11px;
+      text-decoration: line-through;
+      white-space: nowrap;
+      color: #242424;
+      background: #FFE326;
+      
+      padding: 0 ;
+    }
+    .save-val {
+      display: inline-flex;
+      align-items: center;
+      color: #47A13E;
+      font-weight: 600;
+      line-height: 14px;
+      font-size: 11px;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+  }
+}
+
+// Pagination
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  &__dots {
+    display: flex;
+    gap: 10px;
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #DDDDDD;
+      cursor: pointer;
+      &--active { background-color: $color-red-main; }
+    }
+  }
+}
+
+
+
+
+//Information//
+
+
+// 1. O'zgaruvchilar (Variables)
+$font-main: 'Open Sans', sans-serif;
+$color-red: #C3002F;
+$color-text-dark: #333333;
+$color-text-gray: #666666;
+$color-light-gray: #AFAFAF;
+$color-bg-sidebar: #F2F2F2;
+$border-color: #DDDDDD;
+$border-viewer: #EBEBEB;
+
+// 2. Umumiy konteyner
+.useful-info {
+  font-family: $font-main;
+  padding: 80px 0;
+  max-width: 1230px; // Figma: Group 410 width
+  margin: 0 auto;
+
+  &__title {
+    width: 383px; // Figma: Width
+    height: 26px; // Figma: Height
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 26px; // Figma: Line height
+    color: #000000;
+    margin: 0 0 25px 0; // Pastki masofa 25px
+    display: flex;
+    align-items: center;
+  }
+
+  &__divider {
+    width: 1230px; 
+    height: 0; 
+    border: none;
+    border-top: 2px solid #f3f3f3; // Figma: border 2px
+    margin-bottom: 35px;
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 0; 
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+// 3. Sidebar (Chap tomondagi menyu)
+$color-sidebar-bg: #F3F3F3;
+$color-active-text: #3D3D3D;
+$color-inactive-text: #9F9F9F;
+$color-red-marker: #C3002F;
+$font-open-sans: 'Open Sans', sans-serif;
+
+.useful-info__sidebar {
+  flex: 0 0 308px; // Figma: Rectangle 34 width
+  width: 308px;
+  min-height: 416px; // Figma: Rectangle 34 height
+  background-color: $color-sidebar-bg;
+  font-family: $font-open-sans;
+
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      width: 100%;
+      min-height: 54px; 
+      padding: 15px 25px;
+      font-size: 14px;
+      line-height: 18px; // Figma: Line height 18px
+      color: $color-inactive-text; // Figma: #9F9F9F
+      cursor: pointer;
+      
+      transition: all 0.2s ease-in-out;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+
+      
+
+     
+
+      &--active {
+        background-color: #f3f3f3; 
+        color: $color-active-text; // Figma: #3D3D3D
+        font-weight: 600; // Figma: Weight 
+        position: relative;
+        border-left: none;
+        padding-left: 25px; 
+
+        &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%; // Markazga keltirish
+    transform: translateY(-50%); // To'liq markazlashtirish
+    
+    width: 4px; // Chiziq qalinligi
+    height: 24px; // Mana shu yerda balandlikni xohlagancha qisqartirishingiz mumkin (masalan, 20px yoki 24px)
+    background-color: $color-red-marker;
+    
+  }
+        
+      }
+    }
+  }
+}
+
+// 4. Markaziy qism (Viewer)
+
+// O'zgaruvchilar
+$color-red-main: #BC0010; 
+$border-viewer: #EBEBEB;  
+$color-zoom-text: #AFAFAF;
+
+.useful-info__content {
+  flex: 0 0 480px; // Figma: Group 256 width
+  
+
+  .document-viewer {
+    position: relative; 
+    width: 480px;
+    height: 480px;
+    margin-bottom: 12px;
+
+    .arrow {
+      position: absolute; // Katak ichiga olib kirish
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #BC0010; // Figma: Red-Unimart
+      cursor: pointer;
+      z-index: 10;
+      padding: 10px;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &--prev {
+        left: 10px; 
+      }
+
+      &--next {
+        right: 10px; 
+      }
+
+      i, svg {
+        font-size: 24px;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #EBEBEB; 
+      background-color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 400px;  
+        height: 400px; 
+        object-fit: contain;
+      }
+
+      
+    }
+  }
+
+  $color-zoom-text: #AFAFAF;   
+$color-zoom-icon: #6B7FA0;   
+$font-open-sans: 'Open Sans', sans-serif;
+
+.zoom-text {
+  
+  width: 340px;            
+  height: 24px;           
+  margin: 0 auto;         
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;               // Ikonka va matn orasidagi masofa
+  
+  font-family: $font-open-sans;
+  font-size: 12px;
+  font-weight: 400;       // Figma: Weight 400
+  color: $color-zoom-text;
+  text-align: center;
+  line-height: 100%;      // Figma: Line height 100%
+
+  
+  i, svg, .icon-search {
+    width: 14px;          // Figma: Vector width
+    height: 14px;         // Figma: Vector height
+    color: $color-zoom-icon; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+}
+
+
+
+// 5. O'ng tomondagi ma'lumotlar (Details)
+
+.useful-info__details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  min-height: 600px; 
+  padding-top: 40px;
+
+  .details-top {
+    .details-title {
+      font-size: 26px;
+      font-weight: 400;
+      color: #000000;
+      line-height: 100%;
+      margin-bottom: 16px;
+    }
+    .details-subtitle {
+      font-size: 24px;
+      font-weight: 300;
+      color: #000;
+      margin-bottom: 15px;
+      line-height: 22px;
+    }
+    .details-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #000;
+      margin-bottom: 25px;
+    }
+    .details-more {
+      font-size: 14px;
+      color: #0076B9;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px; // Chiziqqacha bo'lgan masofa
+      &:hover { text-decoration: underline; }
+    }
+  }
+
+  
+  .details-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #B4B6B7; 
+    margin-bottom: 20px; 
+  }
+
+  .details-middle {
+    .details-stats {
+      display: flex;
+      gap: 80px;
+      font-size: 13px;
+      color: #3D3D3D;
+      margin-bottom: 40px;
+
+      .rating i {
+        margin: 0 5px;
+        color: #3D3D3D;
+        cursor: pointer;
+      }
+    }
+
+    
+  }
+
+  .details-actions {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  
+  
+  margin-top: 62px;    
+  margin-bottom: 60px; 
+
+  .action-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: #358BC5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+
+    i {
+      font-size: 18px;
+      color: #828282;
+      transition: color 0.2s ease;
+    }
+
+    &:hover {
+      color: #C3002F;
+      i {
+        color: #C3002F;
+      }
+    }
+  }
+}
+
+  // QIZIL TUGMA ENG PASTDA
+  .details-bottom {
+    margin-top: auto; // Bu hamma narsani tepaga qisib, o'zini eng pastga itaradi
+    display: flex;
+    justify-content: flex-end; // O'ng tomonga taqaladi
+
+    .add-doc-btn {
+      background-color: #BC0010;
+      color: #fff;
+      border: none;
+      padding: 10px 21px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      
+      &:hover { background-color: darken(#BC0010, 10%); }
+    }
+  }
+}
+
+
+
+
+
+
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
+  margin-top: 25px;
+
+  // Har bir thumbnail uchun konteyner (Borderli katak)
+  .thumb-item {
+    width: 64px;              // Figma: Tashqi border kengligi
+    height: 64px;             // Figma: Tashqi border balandligi
+    border: 1px solid #EBEBEB; // Oddiy holatdagi border
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;      // Rasmni katak ichida markazlash
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    img {
+      width: 52px;            // Figma: Ichki rasm kengligi
+      height: 52px;           // Figma: Ichki rasm balandligi
+      object-fit: contain;    // Rasm proporsiyasini saqlash
+    }
+
+    // Faol holat (Active)
+    &.active {
+      border: 1px solid $color-red-main; 
+    }
+
+    &:hover {
+      border-color: #ccc;
+    }
+  }
+}
