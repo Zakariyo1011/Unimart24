@@ -11,114 +11,181 @@
 
     <div class="top-line"></div>
 
-    <header class="header">
-        <div class="header__top-bar">
-            <div class="container">
-                <nav class="header__nav">
-                    <a href="#">О компании</a>
-                    <a href="#">О сотрудничестве</a>
-                    <a href="#">Доставка и оплата</a>
-                    <a href="#">Контакты</a>
-                    <a href="#">Новости</a>
-                    <a href="#">Акции и скидки</a>
-                    <a href="#">Отзывы</a>
-                    <a href="#">Полезные материалы</a>
-                </nav>
-                <div class="header__user-info">
-                    <div class="city">
-    Ваш город: 
-    <a href="#" class="city-select">
-        <span>Не выбрано</span>
-        <i class="fa-solid fa-caret-down"></i> </a>
-</div>
-                    <div class="auth">
-    <i class="fa-solid fa-lock auth-icon"></i>
-    <a href="#">Вход</a>
-    <span class="auth-divider"></span>
-    <a href="#">Регистрация</a>
-</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="header__middle">
-            <div class="container">
-                <div class="header__logo">
-                    <img src="img/logo.png" alt="UNIMART">
-                </div>
-
-                <div class="header__contacts">
-                    <div class="phone-row">
-                        <i class="fa-solid fa-phone"></i>
-                        <a href="tel:84951183952">8 (495) 118 39 52</a>
-                    </div>
-                    <div class="callback-dropdown">
-                        <span>Свяжитесь с нами</span>
+<header class="header">
+    <div class="header__top-bar">
+        <div class="container">
+            <nav class="header__nav">
+                <a href="#">О компании</a>
+                <a href="#">О сотрудничестве</a>
+                <a href="#">Доставка и оплата</a>
+                <a href="#">Контакты</a>
+                <a href="#">Новости</a>
+                <a href="#">Акции и скидки</a>
+                <a href="#">Отзывы</a>
+                <a href="#">Полезные материалы</a>
+            </nav>
+            <div class="header__user-info">
+                <div class="city">
+                    Ваш город:
+                    <a href="#" class="city-select">
+                        <span>Не выбрано</span>
                         <i class="fa-solid fa-caret-down"></i>
-                    </div>
+                    </a>
                 </div>
-
-                <div class="header__actions">
-                    <div class="action-item">
-                        <div class="action-icon">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="action-text">
-                            <strong>Избранное</strong>
-                            <span>Товаров (0)</span>
-                        </div>
-                    </div>
-                    <div class="action-item">
-                        <div class="action-icon">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                        <div class="action-text">
-                            <strong>Корзина</strong>
-                            <span>Ваша корзина пуста</span>
-                        </div>
-                    </div>
+                <div class="auth">
+                    <i class="fa-solid fa-lock auth-icon"></i>
+                    <a href="#">Вход</a>
+                    <span class="auth-divider"></span>
+                    <a href="#">Регистрация</a>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="header__bottom">
-            <div class="container">
-                <div class="catalog-box">
-    <button class="btn-catalog">
-        <span>Каталог товаров</span>
-        <i class="fa-solid fa-bars"></i>
-    </button>
+    <div class="header__middle">
+        <div class="container">
+            <div class="header__logo">
+                <img src="img/logo.png" alt="UNIMART">
+            </div>
+
+            <div class="header__contacts">
+                <div class="phone-row">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:84951183952">8 (495) 118 39 52</a>
+                </div>
+                <div class="callback-dropdown">
+                    <span>Свяжитесь с нами</span>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </div>
+
+            <div class="header__actions">
+                <div class="action-item">
+                    <div class="action-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="action-text">
+                        <strong>Избранное</strong>
+                        <span>Товаров (0)</span>
+                    </div>
+                </div>
+                <div class="action-item">
+                    <div class="action-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="action-text">
+                        <strong>Корзина</strong>
+                        <span>Ваша корзина пуста</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MOBILE ikonlar -->
+            <div class="header__mobile-icons">
+                <button class="mobile-icon-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <button class="mobile-icon-btn" id="mobileSearchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <a href="tel:84951183952" class="mobile-icon-btn">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="#" class="mobile-icon-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE search bar -->
+    <div class="mobile-search-bar" id="mobileSearchBar">
+        <div class="container">
+            <div class="search-box">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+                    <input type="text" placeholder="Введите название товара...">
+                </div>
+                <button class="btn-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="header__bottom">
+        <div class="container">
+            <div class="catalog-box">
+                <button class="btn-catalog">
+                    <span>Каталог товаров</span>
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <div class="search-box">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+                    <input type="text" placeholder="Введите название товара и артикул">
+                </div>
+                <button class="btn-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu__panel">
+        <div class="mobile-menu__header">
+            <img src="img/logo.png" alt="UNIMART" style="width:120px;">
+            <button class="mobile-menu__close" id="mobileMenuClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="mobile-menu__nav">
+            <a href="#">О компании</a>
+            <a href="#">О сотрудничестве</a>
+            <a href="#">Доставка и оплата</a>
+            <a href="#">Контакты</a>
+            <a href="#">Новости</a>
+            <a href="#">Акции и скидки</a>
+            <a href="#">Отзывы</a>
+            <a href="#">Полезные материалы</a>
+        </nav>
+        <div class="mobile-menu__auth">
+            <i class="fa-solid fa-lock"></i>
+            <a href="#">Вход</a>
+            <span>|</span>
+            <a href="#">Регистрация</a>
+        </div>
+    </div>
 </div>
-                <div class="search-box">
-                    <div class="search-input-wrapper">
-                        <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
-                        <input type="text" placeholder="Введите название товара и артикул">
-                    </div>
-                    <button class="btn-search">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <section class="hero">
+<section class="hero">
     <div class="hero__container">
         <div class="hero__content">
-            <div class="hero__brand">
-                <img src="img/lsr-logo.png" alt="LSR Logo">
+
+            <!-- Yuqori qator: logo + promo (mobileda yonma-yon) -->
+            <div class="hero__top-row">
+                <div class="hero__brand">
+                    <img src="img/lsr-logo.png" alt="LSR Logo">
+                </div>
+                <div class="hero__footer">
+                    <p class="hero__promo">
+                        Специальные цены, <br>
+                        <strong>только до 30 сентября</strong>
+                    </p>
+                </div>
             </div>
+
             <h1 class="hero__title">КЛИНКЕРНАЯ <br> БРУСЧАТКА</h1>
+
             <ul class="hero__features">
                 <li>Ноттингем (красный флэш)</li>
                 <li>Бонн (терракот)</li>
             </ul>
-            <div class="hero__footer">
-                <p class="hero__promo">
-                    Специальные цены, <br>
-                    <strong>только до 30 сентября</strong>
-                </p>
-            </div>
         </div>
 
         <div class="hero__visual">
@@ -130,7 +197,7 @@
                     <img src="img/brig2.png" alt="Paving 2">
                 </div>
             </div>
-            
+
             <div class="hero__dots">
                 <span class="dot"></span>
                 <span class="dot active"></span>
@@ -141,66 +208,122 @@
     </div>
 </section>
 
+
+
+
+
+
+
+
+
 <!--Catalog tovarov-->
 
-<section class="catalog">
-    <div class="catalog__container">
-        <div class="catalog__header">
-            <h1 class="catalog__title">Каталог товаров</h1>
-            <div class="catalog__line"></div>
-        </div>
+<section class="promotions">
+  <div class="promotions__container">
 
-        <div class="catalog__slider-wrapper">
-            <button class="slider-arrow slider-arrow--left">
-                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-            </button>
+    <!-- Header -->
+    <header class="promotions__header">
+      <h2 class="promotions__title">Каталог товаров</h2>
+      <div class="promotions__line"></div>
+    </header>
 
-            <div class="catalog__grid">
-                <div class="catalog__item catalog__item--orange">
-                    <img src="img/catalog1.jpg" alt="Общестроительные материалы">
-                    <div class="catalog__item-info">
-                        <h3>Общестроительные материалы</h3>
-                    </div>
-                </div>
+    <!-- Slider -->
+    <div class="promotions__slider-wrapper">
 
-                <div class="catalog__item catalog__item--brown">
-                    <img src="img/catalog2.png" alt="Кровельные материалы">
-                    <div class="catalog__item-info">
-                        <h3>Кровельные материалы</h3>
-                    </div>
-                </div>
+      <!-- Strelka chap -->
+      <button class="promotions-arrow promotions-arrow--left" aria-label="Назад">
+        <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
+          <path d="M12 1L1 12L12 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
 
-                <div class="catalog__item catalog__item--gray">
-                    <img src="img/catalog3.png" alt="Фасадные и облицовочные материалы">
-                    <div class="catalog__item-info">
-                        <h3>Фасадные и <br> облицовочные материалы</h3>
-                    </div>
-                </div>
+      <!-- Grid overflow -->
+      <div class="promotions__slider-overflow">
+        <div class="promotions__grid">
 
-                <div class="catalog__item catalog__item--green">
-                    <img src="img/catalog4.png" alt="Ландшафт и благоустройство">
-                    <div class="catalog__item-info">
-                        <h3>Ландшафт и благоустройство</h3>
-                    </div>
-                </div>
+          <article class="promo-card promo-card--gray1">
+            <img src="img/catalog1.jpg" alt="Суперакция" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Общестроительные материалы</h3>
+              <p class="promo-card__text"></p>
+              
+              <a href="#" class="promo-card__btn">Перейти в категорию</a>
             </div>
+          </article>
 
-            <button class="slider-arrow slider-arrow--right">
-                <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            </button>
-        </div>
+          <article class="promo-card promo-card--green1">
+            <img src="img/catalog2.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Кровельные материалы</h3>
+              <p class="promo-card__text"></p>
+              
+              <a href="#" class="promo-card__btn">Перейти в категорию</a>
+            </div>
+          </article>
 
-        <div class="catalog__pagination">
-            <span class="p-dot active"></span>
-            <span class="p-dot"></span>
-            <span class="p-dot"></span>
-            <span class="p-dot"></span>
-            <span class="p-dot"></span>
+          <article class="promo-card promo-card--red1">
+            <img src="img/catalog3.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Фасадные и облицовочные материалы</h3>
+              <p class="promo-card__text"></p>
+              
+              <a href="#" class="promo-card__btn">Перейти в категорию</a>
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--brown1">
+            <img src="img/catalog4.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Ландшафт и благоустройство</h3>
+              <p class="promo-card__text"></p>
+              
+              <a href="#" class="promo-card__btn">Участвовать в акции</a>
+            </div>
+          </article>
+
         </div>
+      </div>
+
+      <!-- Strelka o'ng -->
+      <button class="promotions-arrow promotions-arrow--right" aria-label="Вперёд">
+        <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
+          <path d="M1 1L12 12L1 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
     </div>
+
+    <!-- Pagination dots -->
+    <div class="promotions__pagination">
+      <button class="promo-dot active" aria-label="Слайд 1"></button>
+      <button class="promo-dot" aria-label="Слайд 2"></button>
+      <button class="promo-dot" aria-label="Слайд 3"></button>
+      <button class="promo-dot" aria-label="Слайд 4"></button>
+    </div>
+
+  </div>
 </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--Offers-->
+
 
 <section class="offers">
   <div class="container-1230">
@@ -247,99 +370,103 @@
           </div>
 
           <div class="offers__grid">
-            <article class="p-card">
-              <div class="p-card__img">
-                <img src="img/offers2.png" alt="Atlas Stone">
-              </div>
-              <div class="p-card__badges">
-                <span class="badge badge--navy">Официальный дилер</span>
-                <span class="badge badge--green">Хит продаж</span>
-              </div>
-              <div class="p-card__content">
-                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
-                <div class="p-card__promo">
-                  <span class="p-card__promo-icon">%</span>
-                  <span class="p-card__promo-text">Акция. 2+1 на искусственный камень</span>
-                </div>
-                <a href="#" class="p-card__link">Все акции</a>
-                <div class="p-card__footer">
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
-                    <div class="price-block__main">870<span class="sup">00</span> <span class="currency">₽</span></div>
-                  </div>
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
-                    <div class="price-block__main">2 976<span class="sup">60</span> <span class="currency">₽</span></div>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <div class="offers__slides-track">
 
-            <article class="p-card">
-              <div class="p-card__img">
-                <img src="img/offers3.png" alt="Atlas Stone">
-              </div>
-              <div class="p-card__badges">
-                <span class="badge badge--blue">Новинка</span>
-                <span class="badge badge--green2">Есть в наличии</span>
-                <span class="badge badge--red">Товар по акции</span>
-              </div>
-              <div class="p-card__content">
-                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
-                <div class="p-card__promo">
-                  <span class="p-card__promo-icon">%</span>
-                  <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers2.png" alt="Atlas Stone">
                 </div>
-                <a href="#" class="p-card__link">Все акции</a>
-                <div class="p-card__footer">
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
-                    <div class="price-block__main">1 150<span class="sup">00</span> <span class="currency">₽</span></div>
+                <div class="p-card__badges">
+                  <span class="badge badge--navy">Официальный дилер</span>
+                  <span class="badge badge--green">Хит продаж</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Акция. 2+1 на искусственный камень</span>
                   </div>
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
-                    <div class="price-block__main">22 976<span class="sup">80</span> <span class="currency">₽</span></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="p-card">
-              <div class="p-card__img">
-                <img src="img/offers4.png" alt="Atlas Stone">
-              </div>
-              <div class="p-card__badges">
-                <span class="badge badge--red">Товар по акции</span>
-                <span class="badge badge--blue">Новинка</span>
-                <span class="badge badge--navy">Официальный</span>
-              </div>
-              <div class="p-card__content">
-                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
-                <div class="p-card__promo">
-                  <span class="p-card__promo-icon">%</span>
-                  <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
-                </div>
-                <a href="#" class="p-card__link">Все акции</a>
-                <div class="p-card__footer">
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
-                    <div class="price-block__main price-block__main--sale">1 200<span class="sup">00</span> <span class="currency">₽</span></div>
-                    <div class="price-block__old">
-                      <span class="old-val">1 562.05</span>
-                      <span class="save-val">345 ₽ (20%)</span>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main">870<span class="sup">00</span> <span class="currency">₽</span></div>
                     </div>
-                  </div>
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
-                    <div class="price-block__main price-block__main--sale">10 500<span class="sup">80</span> <span class="currency">₽</span></div>
-                    <div class="price-block__old">
-                      <span class="old-val">1 562.05</span>
-                      <span class="save-val">345 ₽ (20%)</span>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main">2 976<span class="sup">60</span> <span class="currency">₽</span></div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </article>
+              </article>
+
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers3.png" alt="Atlas Stone">
+                </div>
+                <div class="p-card__badges">
+                  <span class="badge badge--blue">Новинка</span>
+                  <span class="badge badge--green2">Есть в наличии</span>
+                  <span class="badge badge--red">Товар по акции</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+                  </div>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main">1 150<span class="sup">00</span> <span class="currency">₽</span></div>
+                    </div>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main">22 976<span class="sup">80</span> <span class="currency">₽</span></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers4.png" alt="Atlas Stone">
+                </div>
+                <div class="p-card__badges">
+                  <span class="badge badge--red">Товар по акции</span>
+                  <span class="badge badge--blue">Новинка</span>
+                  <span class="badge badge--navy">Официальный</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+                  </div>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main price-block__main--sale">1 200<span class="sup">00</span> <span class="currency">₽</span></div>
+                      <div class="price-block__old">
+                        <span class="old-val">1 562.05</span>
+                        <span class="save-val">345 ₽ (20%)</span>
+                      </div>
+                    </div>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main price-block__main--sale">10 500<span class="sup">80</span> <span class="currency">₽</span></div>
+                      <div class="price-block__old">
+                        <span class="old-val">1 562.05</span>
+                        <span class="save-val">345 ₽ (20%)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
           </div>
         </div>
       </div>
@@ -351,7 +478,7 @@
 
     <div class="pagination">
       <div class="pagination__dots">
-          <span class="dot dot--active"></span>
+        <span class="dot dot--active"></span>
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
@@ -360,115 +487,145 @@
     </div>
   </div>
 </section>
+
+
+
+
+
+
 
 <!--Aksiya-->
 
 <section class="promotions">
   <div class="promotions__container">
-    <div class="promotions__header">
-      <h1 class="promotions__title">Акции</h1>
-      <hr class="promotions__line">
-    </div>
 
+    <!-- Header -->
+    <header class="promotions__header">
+      <h2 class="promotions__title">Акции</h2>
+      <div class="promotions__line"></div>
+    </header>
+
+    <!-- Slider -->
     <div class="promotions__slider-wrapper">
-      <button class="slider-btn slider-btn--prev">
+
+      <!-- Strelka chap -->
+      <button class="promotions-arrow promotions-arrow--left" aria-label="Назад">
         <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
           <path d="M12 1L1 12L12 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <div class="promotions__grid">
-        <article class="promo-card promo-card--gray">
-          <img src="img/aksi1.png" alt="Суперакция" class="promo-card__bg">
-          <div class="promo-card__overlay"></div>
-          <div class="promo-card__content">
-            <h3 class="promo-card__name">Суперакция с супреценами</h3>
-            <p class="promo-card__text">Купи цемент — получи бесплатную доставку</p>
-            <div class="timer">
-              <span class="timer__label">До конца акции</span>
-              <div class="timer__display">
-                <div class="timer__unit"><span>05 :</span>дней</div>
-                <div class="timer__unit"><span>06 :</span>час</div>
-                <div class="timer__unit"><span>23 :</span>мин</div>
-                <div class="timer__unit"><span>52 </span>сек</div>
-              </div>
-            </div>
-          </div>
-        </article>
+      <!-- Grid overflow -->
+      <div class="promotions__slider-overflow">
+        <div class="promotions__grid">
 
-        <article class="promo-card promo-card--green">
-          <img src="img/aksi2.png" alt="Metrolite" class="promo-card__bg">
-          <div class="promo-card__overlay"></div>
-          <div class="promo-card__content">
-            <h3 class="promo-card__name">Metrolite по суперценам только сегодня</h3>
-            <p class="promo-card__text">Купи цемент — получи бесплатную доставку</p>
-            <div class="timer">
-              <span class="timer__label">До конца акции</span>
-              <div class="timer__display">
-                <div class="timer__unit"><span>05 :</span>дней</div>
-                <div class="timer__unit"><span>06 :</span>час</div>
-                <div class="timer__unit"><span>23 :</span>мин</div>
-                <div class="timer__unit"><span>52 </span>сек</div>
+          <article class="promo-card promo-card--gray">
+            <img src="img/aksi1.png" alt="Суперакция" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Суперакция с супреценами</h3>
+              <p class="promo-card__text">Купи цемент — получи бесплатную доставку</p>
+              <div class="timer">
+                <span class="timer__label">До конца акции</span>
+                <div class="timer__display">
+                  <div class="timer__unit"><span>05 :</span>дней</div>
+                  <div class="timer__unit"><span>06 :</span>час</div>
+                  <div class="timer__unit"><span>23 :</span>мин</div>
+                  <div class="timer__unit"><span>52 </span>сек</div>
+                </div>
               </div>
+              <a href="#" class="promo-card__btn">Участвовать в акции</a>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <article class="promo-card promo-card--red">
-          <div class="promo-card__icon-wrap">
-            <img src="img/aksi3.png" alt="Card icon">
-          </div>
-          <div class="promo-card__overlay"></div>
-          <div class="promo-card__content">
-            <h3 class="promo-card__name">Получи скидочную карту</h3>
-            <p class="promo-card__text">Скидочная карта Unimart в подарок</p>
-            <div class="timer">
-              <span class="timer__label">До конца акции</span>
-              <div class="timer__display">
-                <div class="timer__unit"><span>05 :</span>дней</div>
-                <div class="timer__unit"><span>06 :</span>час</div>
-                <div class="timer__unit"><span>23 :</span>мин</div>
-                <div class="timer__unit"><span>52 </span>сек</div>
+          <article class="promo-card promo-card--green">
+            <img src="img/aksi2.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Metrolite по суперценам только сегодня</h3>
+              <p class="promo-card__text">Купи цемент — получи бесплатную доставку</p>
+              <div class="timer">
+                <span class="timer__label">До конца акции</span>
+                <div class="timer__display">
+                  <div class="timer__unit"><span>05 :</span>дней</div>
+                  <div class="timer__unit"><span>06 :</span>час</div>
+                  <div class="timer__unit"><span>23 :</span>мин</div>
+                  <div class="timer__unit"><span>52 </span>сек</div>
+                </div>
               </div>
+              <a href="#" class="promo-card__btn">Участвовать в акции</a>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <article class="promo-card promo-card--brown">
-          <img src="img/aksi4.png" alt="Metrolite" class="promo-card__bg">
-          <div class="promo-card__overlay"></div>
-          <div class="promo-card__content">
-            <h3 class="promo-card__name">Metrolite по суперценам</h3>
-            <p class="promo-card__text">Композитная черепиca Metrolite — от 489 руб/лист!</p>
-            <div class="timer">
-              <span class="timer__label">До конца акции</span>
-              <div class="timer__display">
-                <div class="timer__unit"><span>05 :</span>дней</div>
-                <div class="timer__unit"><span>06 :</span>час</div>
-                <div class="timer__unit"><span>23 :</span>мин</div>
-                <div class="timer__unit"><span>52 </span>сек</div>
-              </div>
+          <article class="promo-card promo-card--red">
+            <div class="promo-card__icon-wrap">
+              <img src="img/aksi3.png" alt="Скидочная карта">
             </div>
-          </div>
-        </article>
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Получи скидочную карту</h3>
+              <p class="promo-card__text">Скидочная карта Unimart в подарок</p>
+              <div class="timer">
+                <span class="timer__label">До конца акции</span>
+                <div class="timer__display">
+                  <div class="timer__unit"><span>05 :</span>дней</div>
+                  <div class="timer__unit"><span>06 :</span>час</div>
+                  <div class="timer__unit"><span>23 :</span>мин</div>
+                  <div class="timer__unit"><span>52 </span>сек</div>
+                </div>
+              </div>
+              <a href="#" class="promo-card__btn">Участвовать в акции</a>
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--brown">
+            <img src="img/aksi4.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Metrolite по суперценам</h3>
+              <p class="promo-card__text">Композитная черепица Metrolite — от 489 руб/лист!</p>
+              <div class="timer">
+                <span class="timer__label">До конца акции</span>
+                <div class="timer__display">
+                  <div class="timer__unit"><span>05 :</span>дней</div>
+                  <div class="timer__unit"><span>06 :</span>час</div>
+                  <div class="timer__unit"><span>23 :</span>мин</div>
+                  <div class="timer__unit"><span>52 </span>сек</div>
+                </div>
+              </div>
+              <a href="#" class="promo-card__btn">Участвовать в акции</a>
+            </div>
+          </article>
+
+        </div>
       </div>
 
-      <button class="slider-btn slider-btn--next">
+      <!-- Strelka o'ng -->
+      <button class="promotions-arrow promotions-arrow--right" aria-label="Вперёд">
         <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
           <path d="M1 1L12 12L1 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+
     </div>
 
+    <!-- Pagination dots -->
     <div class="promotions__pagination">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+      <button class="promo-dot active" aria-label="Слайд 1"></button>
+      <button class="promo-dot" aria-label="Слайд 2"></button>
+      <button class="promo-dot" aria-label="Слайд 3"></button>
+      <button class="promo-dot" aria-label="Слайд 4"></button>
     </div>
+
   </div>
 </section>
+
+
+
+
+
+
+
 
 <!--Novinki-->
 
@@ -518,99 +675,103 @@
           </div>
 
           <div class="offers__grid">
-            <article class="p-card">
-              <div class="p-card__img">
-                <img src="img/offers2.png" alt="Atlas Stone">
-              </div>
-              <div class="p-card__badges">
-                <span class="badge badge--navy">Официальный дилер</span>
-                <span class="badge badge--green">Хит продаж</span>
-              </div>
-              <div class="p-card__content">
-                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
-                <div class="p-card__promo">
-                  <span class="p-card__promo-icon">%</span>
-                  <span class="p-card__promo-text">Акция. 2+1 на искусственный камень</span>
-                </div>
-                <a href="#" class="p-card__link">Все акции</a>
-                <div class="p-card__footer">
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
-                    <div class="price-block__main">870<span class="sup">00</span> <span class="currency">₽</span></div>
-                  </div>
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
-                    <div class="price-block__main">2 976<span class="sup">60</span> <span class="currency">₽</span></div>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <div class="offers__slides-track">
 
-            <article class="p-card">
-              <div class="p-card__img">
-                <img src="img/offers3.png" alt="Atlas Stone">
-              </div>
-              <div class="p-card__badges">
-                <span class="badge badge--blue">Новинка</span>
-                <span class="badge badge--green2">Есть в наличии</span>
-                <span class="badge badge--red">Товар по акции</span>
-              </div>
-              <div class="p-card__content">
-                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
-                <div class="p-card__promo">
-                  <span class="p-card__promo-icon">%</span>
-                  <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers2.png" alt="Atlas Stone">
                 </div>
-                <a href="#" class="p-card__link">Все акции</a>
-                <div class="p-card__footer">
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
-                    <div class="price-block__main">1 150<span class="sup">00</span> <span class="currency">₽</span></div>
+                <div class="p-card__badges">
+                  <span class="badge badge--navy">Официальный дилер</span>
+                  <span class="badge badge--green">Хит продаж</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Акция. 2+1 на искусственный камень</span>
                   </div>
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
-                    <div class="price-block__main">22 976<span class="sup">80</span> <span class="currency">₽</span></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="p-card">
-              <div class="p-card__img">
-                <img src="img/offers4.png" alt="Atlas Stone">
-              </div>
-              <div class="p-card__badges">
-                <span class="badge badge--red">Товар по акции</span>
-                <span class="badge badge--blue">Новинка</span>
-                <span class="badge badge--navy">Официальный</span>
-              </div>
-              <div class="p-card__content">
-                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
-                <div class="p-card__promo">
-                  <span class="p-card__promo-icon">%</span>
-                  <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
-                </div>
-                <a href="#" class="p-card__link">Все акции</a>
-                <div class="p-card__footer">
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
-                    <div class="price-block__main price-block__main--sale">1 200<span class="sup">00</span> <span class="currency">₽</span></div>
-                    <div class="price-block__old">
-                      <span class="old-val">1 562.05</span>
-                      <span class="save-val">345 ₽ (20%)</span>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main">870<span class="sup">00</span> <span class="currency">₽</span></div>
                     </div>
-                  </div>
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
-                    <div class="price-block__main price-block__main--sale">10 500<span class="sup">80</span> <span class="currency">₽</span></div>
-                    <div class="price-block__old">
-                      <span class="old-val">1 562.05</span>
-                      <span class="save-val">345 ₽ (20%)</span>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main">2 976<span class="sup">60</span> <span class="currency">₽</span></div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </article>
+              </article>
+
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers3.png" alt="Atlas Stone">
+                </div>
+                <div class="p-card__badges">
+                  <span class="badge badge--blue">Новинка</span>
+                  <span class="badge badge--green2">Есть в наличии</span>
+                  <span class="badge badge--red">Товар по акции</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+                  </div>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main">1 150<span class="sup">00</span> <span class="currency">₽</span></div>
+                    </div>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main">22 976<span class="sup">80</span> <span class="currency">₽</span></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers4.png" alt="Atlas Stone">
+                </div>
+                <div class="p-card__badges">
+                  <span class="badge badge--red">Товар по акции</span>
+                  <span class="badge badge--blue">Новинка</span>
+                  <span class="badge badge--navy">Официальный</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+                  </div>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main price-block__main--sale">1 200<span class="sup">00</span> <span class="currency">₽</span></div>
+                      <div class="price-block__old">
+                        <span class="old-val">1 562.05</span>
+                        <span class="save-val">345 ₽ (20%)</span>
+                      </div>
+                    </div>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main price-block__main--sale">10 500<span class="sup">80</span> <span class="currency">₽</span></div>
+                      <div class="price-block__old">
+                        <span class="old-val">1 562.05</span>
+                        <span class="save-val">345 ₽ (20%)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
           </div>
         </div>
       </div>
@@ -622,7 +783,7 @@
 
     <div class="pagination">
       <div class="pagination__dots">
-          <span class="dot dot--active"></span>
+        <span class="dot dot--active"></span>
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
@@ -631,81 +792,118 @@
     </div>
   </div>
 </section>
+
+
+
+
+
+
 
 
 
 <!--Services-->
 
 
-<section class="services">
-  <div class="services__container">
-    
-    <header class="services__header">
-      <h1 class="services__title">Услуги и сервисы</h1>
-      <div class="services__line"></div>
+
+
+<section class="promotions">
+  <div class="promotions__container">
+
+    <!-- Header -->
+    <header class="promotions__header">
+      <h2 class="promotions__title">Услуги и сервисы</h2>
+      <div class="promotions__line"></div>
     </header>
 
-    <div class="services__slider-wrapper">
-      <button class="slider-btn slider-btn--prev">
+    <!-- Slider -->
+    <div class="promotions__slider-wrapper">
+
+      <!-- Strelka chap -->
+      <button class="promotions-arrow promotions-arrow--left" aria-label="Назад">
         <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
           <path d="M12 1L1 12L12 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <div class="services__grid">
-        <article class="service-card service-card--orange">
-          <img src="img/service1.jpg" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">Консультация архитектора в шоу-руме</h3>
-            <p class="service-card__text">Поможем с проектом</p>
-          </div>
-        </article>
+      <!-- Grid overflow -->
+      <div class="promotions__slider-overflow">
+        <div class="promotions__grid">
 
-        <article class="service-card service-card--blue">
-          <img src="img/service2.jpg" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">Аудит проекта</h3>
-            <p class="service-card__text">Найдем недостатки и слабые места</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--gray2">
+            <img src="img/service1.jpg" alt="Суперакция" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Консультация архитектора в шоу-руме</h3>
+              <p class="promo-card__text">Поможем с проектом</p>
+              
+              <a href="#" class="promo-card__btn">Подробнее</a>
+            </div>
+          </article>
 
-        <article class="service-card service-card--grey">
-          <img src="img/service3.jpg" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">Проверка сметы</h3>
-            <p class="service-card__text">Поможем съэкономить</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--green2">
+            <img src="img/service2.jpg" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Аудит проекта</h3>
+              <p class="promo-card__text">Найдем недостатки и слабые места</p>
+              
+              <a href="#" class="promo-card__btn">Подробнее</a>
+            </div>
+          </article>
 
-        <article class="service-card service-card--dark-blue">
-          <img src="img/service4.jpg" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">Шеф-монтаж</h3>
-            <p class="service-card__text">Ваши идеи — наши специалисты</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--red2">
+            <img src="img/service3.jpg" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Проверка сметы</h3>
+              <p class="promo-card__text">Поможем съэкономить</p>
+              
+              <a href="#" class="promo-card__btn">Подробнее</a>
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--brown2">
+            <img src="img/service4.jpg" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Шеф-монтаж</h3>
+              <p class="promo-card__text">Ваши идеи — наши специалисты</p>
+              
+              <a href="#" class="promo-card__btn">Подробнее</a>
+            </div>
+          </article>
+
+        </div>
       </div>
 
-      <button class="slider-btn slider-btn--next">
+      <!-- Strelka o'ng -->
+      <button class="promotions-arrow promotions-arrow--right" aria-label="Вперёд">
         <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
           <path d="M1 1L12 12L1 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+
     </div>
 
-    <div class="services__pagination">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+    <!-- Pagination dots -->
+    <div class="promotions__pagination">
+      <button class="promo-dot active" aria-label="Слайд 1"></button>
+      <button class="promo-dot" aria-label="Слайд 2"></button>
+      <button class="promo-dot" aria-label="Слайд 3"></button>
+      <button class="promo-dot" aria-label="Слайд 4"></button>
     </div>
+
   </div>
 </section>
+
+
+
+
+
+
+
+
+
 
 
 <!--Xittt-->
@@ -756,99 +954,103 @@
           </div>
 
           <div class="offers__grid">
-            <article class="p-card">
-              <div class="p-card__img">
-                <img src="img/offers2.png" alt="Atlas Stone">
-              </div>
-              <div class="p-card__badges">
-                <span class="badge badge--navy">Официальный дилер</span>
-                <span class="badge badge--green">Хит продаж</span>
-              </div>
-              <div class="p-card__content">
-                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
-                <div class="p-card__promo">
-                  <span class="p-card__promo-icon">%</span>
-                  <span class="p-card__promo-text">Акция. 2+1 на искусственный камень</span>
-                </div>
-                <a href="#" class="p-card__link">Все акции</a>
-                <div class="p-card__footer">
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
-                    <div class="price-block__main">870<span class="sup">00</span> <span class="currency">₽</span></div>
-                  </div>
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
-                    <div class="price-block__main">2 976<span class="sup">60</span> <span class="currency">₽</span></div>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <div class="offers__slides-track">
 
-            <article class="p-card">
-              <div class="p-card__img">
-                <img src="img/offers3.png" alt="Atlas Stone">
-              </div>
-              <div class="p-card__badges">
-                <span class="badge badge--blue">Новинка</span>
-                <span class="badge badge--green2">Есть в наличии</span>
-                <span class="badge badge--red">Товар по акции</span>
-              </div>
-              <div class="p-card__content">
-                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
-                <div class="p-card__promo">
-                  <span class="p-card__promo-icon">%</span>
-                  <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers2.png" alt="Atlas Stone">
                 </div>
-                <a href="#" class="p-card__link">Все акции</a>
-                <div class="p-card__footer">
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
-                    <div class="price-block__main">1 150<span class="sup">00</span> <span class="currency">₽</span></div>
+                <div class="p-card__badges">
+                  <span class="badge badge--navy">Официальный дилер</span>
+                  <span class="badge badge--green">Хит продаж</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Акция. 2+1 на искусственный камень</span>
                   </div>
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
-                    <div class="price-block__main">22 976<span class="sup">80</span> <span class="currency">₽</span></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="p-card">
-              <div class="p-card__img">
-                <img src="img/offers4.png" alt="Atlas Stone">
-              </div>
-              <div class="p-card__badges">
-                <span class="badge badge--red">Товар по акции</span>
-                <span class="badge badge--blue">Новинка</span>
-                <span class="badge badge--navy">Официальный</span>
-              </div>
-              <div class="p-card__content">
-                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
-                <div class="p-card__promo">
-                  <span class="p-card__promo-icon">%</span>
-                  <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
-                </div>
-                <a href="#" class="p-card__link">Все акции</a>
-                <div class="p-card__footer">
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
-                    <div class="price-block__main price-block__main--sale">1 200<span class="sup">00</span> <span class="currency">₽</span></div>
-                    <div class="price-block__old">
-                      <span class="old-val">1 562.05</span>
-                      <span class="save-val">345 ₽ (20%)</span>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main">870<span class="sup">00</span> <span class="currency">₽</span></div>
                     </div>
-                  </div>
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
-                    <div class="price-block__main price-block__main--sale">10 500<span class="sup">80</span> <span class="currency">₽</span></div>
-                    <div class="price-block__old">
-                      <span class="old-val">1 562.05</span>
-                      <span class="save-val">345 ₽ (20%)</span>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main">2 976<span class="sup">60</span> <span class="currency">₽</span></div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </article>
+              </article>
+
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers3.png" alt="Atlas Stone">
+                </div>
+                <div class="p-card__badges">
+                  <span class="badge badge--blue">Новинка</span>
+                  <span class="badge badge--green2">Есть в наличии</span>
+                  <span class="badge badge--red">Товар по акции</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+                  </div>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main">1 150<span class="sup">00</span> <span class="currency">₽</span></div>
+                    </div>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main">22 976<span class="sup">80</span> <span class="currency">₽</span></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers4.png" alt="Atlas Stone">
+                </div>
+                <div class="p-card__badges">
+                  <span class="badge badge--red">Товар по акции</span>
+                  <span class="badge badge--blue">Новинка</span>
+                  <span class="badge badge--navy">Официальный</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+                  </div>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main price-block__main--sale">1 200<span class="sup">00</span> <span class="currency">₽</span></div>
+                      <div class="price-block__old">
+                        <span class="old-val">1 562.05</span>
+                        <span class="save-val">345 ₽ (20%)</span>
+                      </div>
+                    </div>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main price-block__main--sale">10 500<span class="sup">80</span> <span class="currency">₽</span></div>
+                      <div class="price-block__old">
+                        <span class="old-val">1 562.05</span>
+                        <span class="save-val">345 ₽ (20%)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
           </div>
         </div>
       </div>
@@ -860,7 +1062,7 @@
 
     <div class="pagination">
       <div class="pagination__dots">
-          <span class="dot dot--active"></span>
+        <span class="dot dot--active"></span>
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
@@ -869,6 +1071,12 @@
     </div>
   </div>
 </section>
+
+
+
+
+
+
 
 
 <!--Information-->
@@ -963,80 +1171,114 @@
 
 
 
+
+
+
+
+
 <!--Kompaniy-->
 
 
 
 
-<section class="services">
-  <div class="services__container">
-    
-    <header class="services__header">
-      <h1 class="services__title">Преимущества компании</h1>
-      <div class="services__line"></div>
+
+
+
+
+<section class="promotions">
+  <div class="promotions__container">
+
+    <!-- Header -->
+    <header class="promotions__header">
+      <h2 class="promotions__title">Преимущества компании</h2>
+      <div class="promotions__line"></div>
     </header>
 
-    <div class="services__slider-wrapper">
-      <button class="slider-btn slider-btn--prev">
+    <!-- Slider -->
+    <div class="promotions__slider-wrapper">
+
+      <!-- Strelka chap -->
+      <button class="promotions-arrow promotions-arrow--left" aria-label="Назад">
         <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
           <path d="M12 1L1 12L12 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <div class="services__grid">
-        <article class="service-card service-card--orange">
-          <img src="img/kompaniy1.jpg" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">Собственный автопарк, доставка, разгрузка и логистика</h3>
-            <p class="service-card__text">Доставка в более 300 регионов</p>
-          </div>
-        </article>
+      <!-- Grid overflow -->
+      <div class="promotions__slider-overflow">
+        <div class="promotions__grid">
 
-        <article class="service-card service-card--blue">
-          <img src="img/kompaniy2.jpg" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">Складская программа</h3>
-            <p class="service-card__text">Склады в удобных локациях</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--gray3">
+            <img src="img/kompaniy1.jpg" alt="Суперакция" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Собственный автопарк, доставка, разгрузка и логистика</h3>
+              <p class="promo-card__text">Доставка в более 300 регионов</p>
+              
+              <a href="#" class="promo-card__btn">Участвовать в акции</a>
+            </div>
+          </article>
 
-        <article class="service-card service-card--grey">
-          <img src="img/kompaniy3.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">Опыт в загородном строительстве</h3>
-            <p class="service-card__text">Коттеджи на заказ</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--green3">
+            <img src="img/kompaniy2.jpg" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Складская программа</h3>
+              <p class="promo-card__text">Склады в удобных локациях</p>
+              
+              <a href="#" class="promo-card__btn">Участвовать в акции</a>
+            </div>
+          </article>
 
-        <article class="service-card service-card--dark-blue">
-          <img src="img/kompaniy4.jpg" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">Шоу-рум</h3>
-            <p class="service-card__text">Посмотри на товары в нашем шоу-рум</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--red3">
+            <img src="img/kompaniy3.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Опыт в загородном строительстве</h3>
+              <p class="promo-card__text">Коттеджи на заказ</p>
+              
+              <a href="#" class="promo-card__btn">Участвовать в акции</a>
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--brown3">
+            <img src="img/kompaniy4.jpg" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Шоу-рум</h3>
+              <p class="promo-card__text">Посмотри на товары в нашем шоу-рум</p>
+              
+              <a href="#" class="promo-card__btn">Участвовать в акции</a>
+            </div>
+          </article>
+
+        </div>
       </div>
 
-      <button class="slider-btn slider-btn--next">
+      <!-- Strelka o'ng -->
+      <button class="promotions-arrow promotions-arrow--right" aria-label="Вперёд">
         <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
           <path d="M1 1L12 12L1 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+
     </div>
 
-    <div class="services__pagination">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+    <!-- Pagination dots -->
+    <div class="promotions__pagination">
+      <button class="promo-dot active" aria-label="Слайд 1"></button>
+      <button class="promo-dot" aria-label="Слайд 2"></button>
+      <button class="promo-dot" aria-label="Слайд 3"></button>
+      <button class="promo-dot" aria-label="Слайд 4"></button>
     </div>
+
   </div>
 </section>
+
+
+
+
+
 
 
 
@@ -1084,61 +1326,81 @@
         </div>
 
         <div class="faq-accordion-list">
-            <div class="faq-row">
-                <div class="faq-question">
-                    <i class="fas fa-plus"></i>
-                    <span>Можно ли использовать гипсовый камень для облицовки фасада?</span>
-                </div>
-                <div class="faq-info">
-                    <div class="bubble-box">
-                        <span class="num">23</span>
-                        <i class="fas fa-comment-alt"></i>
-                    </div>
-                    <span class="info-text">Ответа</span>
-                </div>
+            <div class="faq-row-wrapper">
+        <div class="faq-row">
+            <div class="faq-question">
+                <i class="fas fa-plus"></i>
+                <span>Можно ли использовать гипсовый камень для облицовки фасада?</span>
             </div>
+            <div class="faq-info">
+                <div class="bubble-box">
+                    <span class="num">23</span>
+                    <i class="fas fa-comment-alt"></i>
+                </div>
+                <span class="info-text">Ответа</span>
+            </div>
+        </div>
+        <div class="faq-answer">
+            <p>Гипсовый камень не рекомендуется использовать для внешней облицовки фасадов, так как гипс сильно впитывает влагу. Для фасадов лучше использовать бетонный декоративный камень.</p>
+        </div>
+    </div>
 
-            <div class="faq-row">
-                <div class="faq-question">
-                    <i class="fas fa-plus"></i>
-                    <span>Можно ли гипсовый камень для облицовки фасаda?</span>
-                </div>
-                <div class="faq-info">
-                    <div class="bubble-box">
-                        <span class="num">23</span>
-                        <i class="fas fa-comment-alt"></i>
-                    </div>
-                    <span class="info-text">Ответа</span>
-                </div>
+            <div class="faq-row-wrapper">
+        <div class="faq-row">
+            <div class="faq-question">
+                <i class="fas fa-plus"></i>
+                <span>Можно ли использовать гипсовый камень для облицовки фасада?</span>
             </div>
+            <div class="faq-info">
+                <div class="bubble-box">
+                    <span class="num">23</span>
+                    <i class="fas fa-comment-alt"></i>
+                </div>
+                <span class="info-text">Ответа</span>
+            </div>
+        </div>
+        <div class="faq-answer">
+            <p>Гипсовый камень не рекомендуется использовать для внешней облицовки фасадов, так как гипс сильно впитывает влагу. Для фасадов лучше использовать бетонный декоративный камень.</p>
+        </div>
+    </div>
 
-            <div class="faq-row">
-                <div class="faq-question">
-                    <i class="fas fa-plus"></i>
-                    <span>Какие устройства нужны для облицовки фасадов?</span>
-                </div>
-                <div class="faq-info">
-                    <div class="bubble-box">
-                        <span class="num">12</span>
-                        <i class="fas fa-comment-alt"></i>
-                    </div>
-                    <span class="info-text">Ответов</span>
-                </div>
+            <div class="faq-row-wrapper">
+        <div class="faq-row">
+            <div class="faq-question">
+                <i class="fas fa-plus"></i>
+                <span>Можно ли использовать гипсовый камень для облицовки фасада?</span>
             </div>
+            <div class="faq-info">
+                <div class="bubble-box">
+                    <span class="num">23</span>
+                    <i class="fas fa-comment-alt"></i>
+                </div>
+                <span class="info-text">Ответа</span>
+            </div>
+        </div>
+        <div class="faq-answer">
+            <p>Гипсовый камень не рекомендуется использовать для внешней облицовки фасадов, так как гипс сильно впитывает влагу. Для фасадов лучше использовать бетонный декоративный камень.</p>
+        </div>
+    </div>
 
-            <div class="faq-row">
-                <div class="faq-question">
-                    <i class="fas fa-plus"></i>
-                    <span>Из чего производится гипсовый камень для облицовки фасадов?</span>
-                </div>
-                <div class="faq-info">
-                    <div class="bubble-box">
-                        <span class="num">23</span>
-                        <i class="fas fa-comment-alt"></i>
-                    </div>
-                    <span class="info-text">Ответа</span>
-                </div>
+            <div class="faq-row-wrapper">
+        <div class="faq-row">
+            <div class="faq-question">
+                <i class="fas fa-plus"></i>
+                <span>Можно ли использовать гипсовый камень для облицовки фасада?</span>
             </div>
+            <div class="faq-info">
+                <div class="bubble-box">
+                    <span class="num">23</span>
+                    <i class="fas fa-comment-alt"></i>
+                </div>
+                <span class="info-text">Ответа</span>
+            </div>
+        </div>
+        <div class="faq-answer">
+            <p>Гипсовый камень не рекомендуется использовать для внешней облицовки фасадов, так как гипс сильно впитывает влагу. Для фасадов лучше использовать бетонный декоративный камень.</p>
+        </div>
+    </div>
         </div>
     </div>
 </section>
@@ -1151,73 +1413,93 @@
 
 
 
-<section class="services">
-  <div class="services__container">
-    
-    <header class="services__header">
-      <h1 class="services__title">Эксперты по реализации</h1>
-      <div class="services__line"></div>
+<section class="promotions">
+  <div class="promotions__container">
+
+    <!-- Header -->
+    <header class="promotions__header">
+      <h2 class="promotions__title">Эксперты по реализации</h2>
+      <div class="promotions__line"></div>
     </header>
 
-    <div class="services__slider-wrapper">
-      <button class="slider-btn slider-btn--prev">
+    <!-- Slider -->
+    <div class="promotions__slider-wrapper">
+
+      <!-- Strelka chap -->
+      <button class="promotions-arrow promotions-arrow--left" aria-label="Назад">
         <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
           <path d="M12 1L1 12L12 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <div class="services__grid">
-        <article class="service-card service-card--orange">
-          <img src="img/ekspert1.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">Краснокаменский Михаил</h3>
-            <p class="service-card__text">Менеджер по работе с клиентами</p>
-          </div>
-        </article>
+      <!-- Grid overflow -->
+      <div class="promotions__slider-overflow">
+        <div class="promotions__grid">
 
-        <article class="service-card service-card--blue">
-          <img src="img/ekspert2.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">Петрова Ксения</h3>
-            <p class="service-card__text">Менеджер по работе с клиентами</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--gray4">
+            <img src="img/ekspert1.png" alt="Суперакция" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Краснокаменский Михаил</h3>
+              <p class="promo-card__text">Менеджер по работе с клиентами</p>
+              
+              <a href="#" class="promo-card__btn">Написать сообщние</a>
+            </div>
+          </article>
 
-        <article class="service-card service-card--grey">
-          <img src="img/ekspert3.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">Сидоров Вячеслав</h3>
-            <p class="service-card__text">Менеджер по работе с клиентами</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--green4">
+            <img src="img/ekspert2.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Петрова Ксения</h3>
+              <p class="promo-card__text">Менеджер по работе с клиентами</p>
+              
+              <a href="#" class="promo-card__btn">Написать сообщние</a>
+            </div>
+          </article>
 
-        <article class="service-card service-card--dark-blue">
-          <img src="img/ekspert4.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">Третьякова Надежда</h3>
-            <p class="service-card__text">Менеджер по работе с клиентами</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--red4">
+            <img src="img/ekspert3.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Сидоров Вячеслав</h3>
+              <p class="promo-card__text">Менеджер по работе с клиентами</p>
+              
+              <a href="#" class="promo-card__btn">Написать сообщние</a>
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--brown4">
+            <img src="img/ekspert4.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Третьякова Надежда</h3>
+              <p class="promo-card__text">Менеджер по работе с клиентами</p>
+              
+              <a href="#" class="promo-card__btn">Написать сообщние</a>
+            </div>
+          </article>
+
+        </div>
       </div>
 
-      <button class="slider-btn slider-btn--next">
+      <!-- Strelka o'ng -->
+      <button class="promotions-arrow promotions-arrow--right" aria-label="Вперёд">
         <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
           <path d="M1 1L12 12L1 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+
     </div>
 
-    <div class="services__pagination">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+    <!-- Pagination dots -->
+    <div class="promotions__pagination">
+      <button class="promo-dot active" aria-label="Слайд 1"></button>
+      <button class="promo-dot" aria-label="Слайд 2"></button>
+      <button class="promo-dot" aria-label="Слайд 3"></button>
+      <button class="promo-dot" aria-label="Слайд 4"></button>
     </div>
+
   </div>
 </section>
 
@@ -1496,75 +1778,104 @@
 
 
 
-<section class="services">
-  <div class="services__container">
-    
-    <header class="services__header">
-      <h1 class="services__title">Новости</h1>
-      <div class="services__line"></div>
+
+
+
+
+<section class="promotions">
+  <div class="promotions__container">
+
+    <!-- Header -->
+    <header class="promotions__header">
+      <h2 class="promotions__title">Новости</h2>
+      <div class="promotions__line"></div>
     </header>
 
-    <div class="services__slider-wrapper">
-      <button class="slider-btn slider-btn--prev">
+    <!-- Slider -->
+    <div class="promotions__slider-wrapper">
+
+      <!-- Strelka chap -->
+      <button class="promotions-arrow promotions-arrow--left" aria-label="Назад">
         <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
           <path d="M12 1L1 12L12 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <div class="services__grid">
-        <article class="service-card service-card--orange">
-          <img src="img/novisti1.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">15.04.21</h3>
-            <p class="service-card__text">AWC Klinker на выставке Batimat 2019</p>
-          </div>
-        </article>
+      <!-- Grid overflow -->
+      <div class="promotions__slider-overflow">
+        <div class="promotions__grid">
 
-        <article class="service-card service-card--blue">
-          <img src="img/novisti2.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">10.04.21</h3>
-            <p class="service-card__text">Натуральные покрытия для древесины OSMO на выставке Baitmat 2019</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--gray5">
+            <img src="img/novisti1.png" alt="Суперакция" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">15.04.21</h3>
+              <p class="promo-card__text">AWC Klinker на выставке Batimat 2019</p>
+              
+              <a href="#" class="promo-card__btn">Подробнее</a>
+            </div>
+          </article>
 
-        <article class="service-card service-card--grey">
-          <img src="img/novisti3.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">04.04.21</h3>
-            <p class="service-card__text">Масштабный стенд сантехнического оборудования GROHE </p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--green5">
+            <img src="img/novisti2.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">10.04.21</h3>
+              <p class="promo-card__text">Натуральные покрытия для древесины OSMO на выставке Baitmat 2019</p>
+              
+              <a href="#" class="promo-card__btn">Подробнее</a>
+            </div>
+          </article>
 
-        <article class="service-card service-card--dark-blue">
-          <img src="img/novisti4.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name">15.04.21</h3>
-            <p class="service-card__text">AWC Klinker на выставке Batimat 2019</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--red5">
+            <img src="img/novisti3.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">04.04.21</h3>
+              <p class="promo-card__text">Масштабный стенд сантехнического оборудования GROHE </p>
+              
+              <a href="#" class="promo-card__btn">Подробнее</a>
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--brown5">
+            <img src="img/novisti4.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">15.04.21</h3>
+              <p class="promo-card__text">AWC Klinker на выставке Batimat 2019</p>
+              
+              <a href="#" class="promo-card__btn">Подробнее</a>
+            </div>
+          </article>
+
+        </div>
       </div>
 
-      <button class="slider-btn slider-btn--next">
+      <!-- Strelka o'ng -->
+      <button class="promotions-arrow promotions-arrow--right" aria-label="Вперёд">
         <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
           <path d="M1 1L12 12L1 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+
     </div>
 
-    <div class="services__pagination">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+    <!-- Pagination dots -->
+    <div class="promotions__pagination">
+      <button class="promo-dot active" aria-label="Слайд 1"></button>
+      <button class="promo-dot" aria-label="Слайд 2"></button>
+      <button class="promo-dot" aria-label="Слайд 3"></button>
+      <button class="promo-dot" aria-label="Слайд 4"></button>
     </div>
+
   </div>
 </section>
+
+
+
+
+
 
 
 
@@ -1618,99 +1929,103 @@
           </div>
 
           <div class="offers__grid">
-            <article class="p-card">
-              <div class="p-card__img">
-                <img src="img/offers2.png" alt="Atlas Stone">
-              </div>
-              <div class="p-card__badges">
-                <span class="badge badge--navy">Официальный дилер</span>
-                <span class="badge badge--green">Хит продаж</span>
-              </div>
-              <div class="p-card__content">
-                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
-                <div class="p-card__promo">
-                  <span class="p-card__promo-icon">%</span>
-                  <span class="p-card__promo-text">Акция. 2+1 на искусственный камень</span>
-                </div>
-                <a href="#" class="p-card__link">Все акции</a>
-                <div class="p-card__footer">
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
-                    <div class="price-block__main">870<span class="sup">00</span> <span class="currency">₽</span></div>
-                  </div>
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
-                    <div class="price-block__main">2 976<span class="sup">60</span> <span class="currency">₽</span></div>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <div class="offers__slides-track">
 
-            <article class="p-card">
-              <div class="p-card__img">
-                <img src="img/offers3.png" alt="Atlas Stone">
-              </div>
-              <div class="p-card__badges">
-                <span class="badge badge--blue">Новинка</span>
-                <span class="badge badge--green2">Есть в наличии</span>
-                <span class="badge badge--red">Товар по акции</span>
-              </div>
-              <div class="p-card__content">
-                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
-                <div class="p-card__promo">
-                  <span class="p-card__promo-icon">%</span>
-                  <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers2.png" alt="Atlas Stone">
                 </div>
-                <a href="#" class="p-card__link">Все акции</a>
-                <div class="p-card__footer">
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
-                    <div class="price-block__main">1 150<span class="sup">00</span> <span class="currency">₽</span></div>
+                <div class="p-card__badges">
+                  <span class="badge badge--navy">Официальный дилер</span>
+                  <span class="badge badge--green">Хит продаж</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Акция. 2+1 на искусственный камень</span>
                   </div>
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
-                    <div class="price-block__main">22 976<span class="sup">80</span> <span class="currency">₽</span></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="p-card">
-              <div class="p-card__img">
-                <img src="img/offers4.png" alt="Atlas Stone">
-              </div>
-              <div class="p-card__badges">
-                <span class="badge badge--red">Товар по акции</span>
-                <span class="badge badge--blue">Новинка</span>
-                <span class="badge badge--navy">Официальный</span>
-              </div>
-              <div class="p-card__content">
-                <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
-                <div class="p-card__promo">
-                  <span class="p-card__promo-icon">%</span>
-                  <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
-                </div>
-                <a href="#" class="p-card__link">Все акции</a>
-                <div class="p-card__footer">
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>пог. м</span></div>
-                    <div class="price-block__main price-block__main--sale">1 200<span class="sup">00</span> <span class="currency">₽</span></div>
-                    <div class="price-block__old">
-                      <span class="old-val">1 562.05</span>
-                      <span class="save-val">345 ₽ (20%)</span>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main">870<span class="sup">00</span> <span class="currency">₽</span></div>
                     </div>
-                  </div>
-                  <div class="price-block">
-                    <div class="price-block__label">Цена за: <span>гофротара</span></div>
-                    <div class="price-block__main price-block__main--sale">10 500<span class="sup">80</span> <span class="currency">₽</span></div>
-                    <div class="price-block__old">
-                      <span class="old-val">1 562.05</span>
-                      <span class="save-val">345 ₽ (20%)</span>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main">2 976<span class="sup">60</span> <span class="currency">₽</span></div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </article>
+              </article>
+
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers3.png" alt="Atlas Stone">
+                </div>
+                <div class="p-card__badges">
+                  <span class="badge badge--blue">Новинка</span>
+                  <span class="badge badge--green2">Есть в наличии</span>
+                  <span class="badge badge--red">Товар по акции</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+                  </div>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main">1 150<span class="sup">00</span> <span class="currency">₽</span></div>
+                    </div>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main">22 976<span class="sup">80</span> <span class="currency">₽</span></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers4.png" alt="Atlas Stone">
+                </div>
+                <div class="p-card__badges">
+                  <span class="badge badge--red">Товар по акции</span>
+                  <span class="badge badge--blue">Новинка</span>
+                  <span class="badge badge--navy">Официальный</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 503/504, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Скидки до 40% на искусственный камень</span>
+                  </div>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main price-block__main--sale">1 200<span class="sup">00</span> <span class="currency">₽</span></div>
+                      <div class="price-block__old">
+                        <span class="old-val">1 562.05</span>
+                        <span class="save-val">345 ₽ (20%)</span>
+                      </div>
+                    </div>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main price-block__main--sale">10 500<span class="sup">80</span> <span class="currency">₽</span></div>
+                      <div class="price-block__old">
+                        <span class="old-val">1 562.05</span>
+                        <span class="save-val">345 ₽ (20%)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
           </div>
         </div>
       </div>
@@ -1722,7 +2037,7 @@
 
     <div class="pagination">
       <div class="pagination__dots">
-          <span class="dot dot--active"></span>
+        <span class="dot dot--active"></span>
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
@@ -1742,75 +2057,98 @@
 
 
 
-<section class="services">
-  <div class="services__container">
-    
-    <header class="services__header">
-      <h1 class="services__title">Часто ищут</h1>
-      <div class="services__line"></div>
+<section class="promotions">
+  <div class="promotions__container">
+
+    <!-- Header -->
+    <header class="promotions__header">
+      <h2 class="promotions__title">Часто ищут</h2>
+      <div class="promotions__line"></div>
     </header>
 
-    <div class="services__slider-wrapper">
-      <button class="slider-btn slider-btn--prev">
+    <!-- Slider -->
+    <div class="promotions__slider-wrapper">
+
+      <!-- Strelka chap -->
+      <button class="promotions-arrow promotions-arrow--left" aria-label="Назад">
         <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
           <path d="M12 1L1 12L12 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <div class="services__grid">
-        <article class="service-card service-card--orange">
-          <img src="img/chasto1.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name"></h3>
-            <p class="service-card__text">Искусственный камень под кирпич</p>
-          </div>
-        </article>
+      <!-- Grid overflow -->
+      <div class="promotions__slider-overflow">
+        <div class="promotions__grid">
 
-        <article class="service-card service-card--blue">
-          <img src="img/chasto2.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name"></h3>
-            <p class="service-card__text">Искусственный камень скалистая гора</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--gray6">
+            <img src="img/chasto1.png" alt="Суперакция" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Искусственный камень под кирпич</h3>
+              <p class="promo-card__text"></p>
+              
+              <a href="#" class="promo-card__btn">Подробнее</a>
+            </div>
+          </article>
 
-        <article class="service-card service-card--grey">
-          <img src="img/chasto3.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name"></h3>
-            <p class="service-card__text">Искусственный камень под травертин</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--green6">
+            <img src="img/chasto2.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Искусственный камень скалистая гора</h3>
+              <p class="promo-card__text"></p>
+              
+              <a href="#" class="promo-card__btn">Подробнее</a>
+            </div>
+          </article>
 
-        <article class="service-card service-card--dark-blue">
-          <img src="img/chasto4.png" alt="" class="service-card__bg">
-          <div class="service-card__overlay"></div>
-          <div class="service-card__content">
-            <h3 class="service-card__name"></h3>
-            <p class="service-card__text">Искусственный камень под песчаник</p>
-          </div>
-        </article>
+          <article class="promo-card promo-card--red6">
+            <img src="img/chasto3.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Искусственный камень под травертин</h3>
+              <p class="promo-card__text"></p>
+              
+              <a href="#" class="promo-card__btn">Подробнее</a>
+            </div>
+          </article>
+
+          <article class="promo-card promo-card--brown6">
+            <img src="img/chasto4.png" alt="Metrolite" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Искусственный камень под песчаник</h3>
+              <p class="promo-card__text"></p>
+              
+              <a href="#" class="promo-card__btn">Подробнее</a>
+            </div>
+          </article>
+
+        </div>
       </div>
 
-      <button class="slider-btn slider-btn--next">
+      <!-- Strelka o'ng -->
+      <button class="promotions-arrow promotions-arrow--right" aria-label="Вперёд">
         <svg width="13" height="24" viewBox="0 0 13 24" fill="none">
           <path d="M1 1L12 12L1 23" stroke="#BC0010" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+
     </div>
 
-    <div class="services__pagination">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+    <!-- Pagination dots -->
+    <div class="promotions__pagination">
+      <button class="promo-dot active" aria-label="Слайд 1"></button>
+      <button class="promo-dot" aria-label="Слайд 2"></button>
+      <button class="promo-dot" aria-label="Слайд 3"></button>
+      <button class="promo-dot" aria-label="Слайд 4"></button>
     </div>
+
   </div>
 </section>
+
+
+
 
 
 
@@ -1923,6 +2261,6 @@
 
 
 
-
+<script src="main.js"></script>
 </body>
 </html>
