@@ -781,6 +781,71 @@ body {
 
 
 
+// "Свяжитесь с нами" dropdown
+.callback-dropdown {
+    cursor: pointer;
+    position: relative;
+
+    i { transition: transform 0.3s ease; }
+
+    &__menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        background: #fff;
+        border: 1px solid #E5E5E5;
+        min-width: 200px;
+        z-index: 100;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+        &.open { display: block; }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            font-size: 13px;
+            color: #358BC5;
+            text-decoration: none;
+            border-bottom: 1px solid #F3F3F3;
+
+            i { font-size: 14px; color: #BC0010; width: 16px; }
+            &:last-child { border-bottom: none; }
+            &:hover { background: #F3F3F3; }
+        }
+    }
+}
+
+// Hero slider
+.hero__slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero__slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+
+    &.active { display: flex; }
+
+    .hero__image-wrapper {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero__slide {
+        &.active { display: block; }
+        .hero__image-wrapper { flex-direction: column; height: auto; }
+    }
+}
+
 
 
 
@@ -1676,6 +1741,8 @@ body {
 }
 
 
+
+
 @media (max-width: 768px) {
   .offers {
     padding: 30px 0;
@@ -1694,25 +1761,9 @@ body {
       align-items: stretch;
     }
 
+    // Desktop strelkalarni yashirish
     &__nav {
-      position: absolute;
-      top: auto;
-      bottom: auto;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: rgba(#F5F5F5, 0.85);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      color: #333;
-      padding: 0;
-      z-index: 10;
-      transform: translateY(-50%);
-
-      &--prev { left: 8px; }
-      &--next { right: 8px; }
+      display: none;
     }
 
     &__layout {
@@ -1760,9 +1811,15 @@ body {
     }
   }
 
-  // Hide filter bar
+  // Filter bar yashirish
   .filter-bar {
     display: none;
+  }
+
+  // Grid
+  .offers__grid {
+    overflow: hidden;
+    position: relative;
   }
 
   // 1 card per slide
@@ -1772,9 +1829,49 @@ body {
     border-right: none;
     padding: 15px 0;
 
-    &__img img {
-      height: 345px;
+    // Rasm qismi — strelkalar shu ichida
+    &__img {
+      position: relative;
+
+      img {
+        height: 345px;
+        width: 345px;
+        display: block;
+        object-fit: cover;
+      }
     }
+  }
+
+  // Mobile strelkalar — p-card__img ichida
+  .p-card__img {
+    .mobile-nav-prev,
+    .mobile-nav-next {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background-color: rgba(245, 245, 245, 0.85);
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #333;
+      border: none;
+      padding: 0;
+      z-index: 10;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: rgba(245, 245, 245, 1);
+      }
+    }
+
+    .mobile-nav-prev { left: 12px; }
+    .mobile-nav-next { right: 12px; }
   }
 
   .pagination {
@@ -7503,5 +7600,285 @@ $font-family: 'Open Sans', sans-serif;
         text-transform: none; // "Подписаться" deb yozilgan
       }
     }
+  }
+}
+
+
+
+
+
+
+
+
+// Variables
+$red: #BC0010;
+$red-dark: #9a000d;
+$white: #fff;
+$black: #030303;
+$gray: #888;
+$bg-input: #F3F3F3;
+$border: #EBEBEB;
+
+// Widget wrapper
+.chat-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+// Items list (above toggle button)
+.chat-widget__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  order: -1;
+}
+
+// Single item row (label + button)
+.chat-widget__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &:nth-child(1) { transition-delay: 0.05s; }
+  &:nth-child(2) { transition-delay: 0.10s; }
+  &:nth-child(3) { transition-delay: 0.15s; }
+  &:nth-child(4) { transition-delay: 0.20s; }
+
+  .chat-widget.is-open & {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+  }
+}
+
+// Tooltip label
+.chat-widget__label {
+  background: $white;
+  color: #333;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  .chat-widget__item:hover & {
+    opacity: 1;
+  }
+}
+
+// Icon button (circle)
+.chat-widget__btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 20px;
+  color: $white;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  }
+
+  &--viber    { background: #7360F2; }
+  &--telegram { background: #2AABEE; }
+  &--form     { background: $red; }
+  &--call     { background: $red; }
+}
+
+// Main toggle button
+.chat-widget__toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: $red;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(188, 0, 16, 0.4);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  // Pulse ring
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(188, 0, 16, 0.3);
+    animation: pulse-ring 2s ease-out infinite;
+    z-index: -1;
+  }
+
+  i {
+    font-size: 22px;
+    color: $white;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.4s ease;
+  }
+
+  .icon-open  { opacity: 1;  transform: rotate(0deg); }
+  .icon-close { opacity: 0;  transform: rotate(-90deg); }
+
+  // Open state
+  .chat-widget.is-open & {
+    background-color: $gray;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    &::before {
+      display: none;
+    }
+
+    .icon-open  { opacity: 0; transform: rotate(90deg); }
+    .icon-close { opacity: 1; transform: rotate(0deg); }
+  }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+
+// ===== MODAL =====
+
+.chat-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+
+  &.is-open {
+    display: flex;
+  }
+}
+
+.chat-modal {
+  background: $white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 360px;
+  max-width: 90vw;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modal-in 0.3s ease;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: $black;
+    margin-bottom: 6px;
+  }
+
+  p {
+    font-size: 13px;
+    color: $gray;
+    margin-bottom: 20px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid $border;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: inherit;
+    color: #333;
+    background: $bg-input;
+    margin-bottom: 10px;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+
+    &::placeholder {
+      color: #999;
+    }
+
+    &:focus {
+      border-color: $red;
+      background: $white;
+    }
+  }
+
+  textarea {
+    resize: none;
+    height: 90px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    height: 42px;
+    background: $red;
+    color: $white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: $red-dark;
+    }
+  }
+}
+
+.chat-modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: $gray;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
   }
 }

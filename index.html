@@ -9,7 +9,8 @@
 </head>
 <body>
 
-    <div class="top-line"></div>
+    
+<div class="top-line"></div>
 
 <header class="header">
     <div class="header__top-bar">
@@ -53,9 +54,34 @@
                     <i class="fa-solid fa-phone"></i>
                     <a href="tel:84951183952">8 (495) 118 39 52</a>
                 </div>
+
+                <!-- Свяжитесь с нами dropdown -->
                 <div class="callback-dropdown">
                     <span>Свяжитесь с нами</span>
                     <i class="fa-solid fa-caret-down"></i>
+
+                    <div class="callback-dropdown__menu">
+                        <a href="tel:84951183952">
+                            <i class="fa-solid fa-phone"></i>
+                            8 (495) 118 39 52
+                        </a>
+                        <a href="mailto:info@unimart.ru">
+                            <i class="fa-solid fa-envelope"></i>
+                            info@unimart.ru
+                        </a>
+                        <a href="#">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            Онлайн чат
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-telegram"></i>
+                            Telegram
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -163,11 +189,11 @@
     </div>
 </div>
 
+<!-- HERO SECTION -->
 <section class="hero">
     <div class="hero__container">
         <div class="hero__content">
 
-            <!-- Yuqori qator: logo + promo (mobileda yonma-yon) -->
             <div class="hero__top-row">
                 <div class="hero__brand">
                     <img src="img/lsr-logo.png" alt="LSR Logo">
@@ -189,20 +215,60 @@
         </div>
 
         <div class="hero__visual">
-            <div class="hero__image-wrapper">
-                <div class="hero__image-item">
-                    <img src="img/brig1.png" alt="Paving 1">
+            <!-- Slider: 4 ta slide, har birida 2 rasm -->
+            <div class="hero__slides">
+
+                <div class="hero__slide active">
+                    <div class="hero__image-wrapper">
+                        <div class="hero__image-item">
+                            <img src="img/brig1.png" alt="Paving 1">
+                        </div>
+                        <div class="hero__image-item">
+                            <img src="img/brig2.png" alt="Paving 2">
+                        </div>
+                    </div>
                 </div>
-                <div class="hero__image-item">
-                    <img src="img/brig2.png" alt="Paving 2">
+
+                <div class="hero__slide">
+                    <div class="hero__image-wrapper">
+                        <div class="hero__image-item">
+                            <img src="img/house2.png" alt="Paving 3">
+                        </div>
+                        <div class="hero__image-item">
+                            <img src="img/house3.png" alt="Paving 4">
+                        </div>
+                    </div>
                 </div>
+
+                <div class="hero__slide">
+                    <div class="hero__image-wrapper">
+                        <div class="hero__image-item">
+                            <img src="img/house1.png" alt="Paving 5">
+                        </div>
+                        <div class="hero__image-item">
+                            <img src="img/house3.png" alt="Paving 6">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero__slide">
+                    <div class="hero__image-wrapper">
+                        <div class="hero__image-item">
+                            <img src="img/house2.png" alt="Paving 7">
+                        </div>
+                        <div class="hero__image-item">
+                            <img src="img/house1.png" alt="Paving 8">
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div class="hero__dots">
-                <span class="dot"></span>
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
             </div>
         </div>
     </div>
@@ -241,47 +307,80 @@
       <div class="promotions__slider-overflow">
         <div class="promotions__grid">
 
+          <!-- Card 1 -->
           <article class="promo-card promo-card--gray1">
-            <img src="img/catalog1.jpg" alt="Суперакция" class="promo-card__bg">
+            <img src="img/catalog1.jpg" alt="Общестроительные материалы" class="promo-card__bg">
             <div class="promo-card__overlay"></div>
             <div class="promo-card__content">
               <h3 class="promo-card__name">Общестроительные материалы</h3>
               <p class="promo-card__text"></p>
-              
               <a href="#" class="promo-card__btn">Перейти в категорию</a>
             </div>
           </article>
 
+          <!-- Card 2 -->
           <article class="promo-card promo-card--green1">
-            <img src="img/catalog2.png" alt="Metrolite" class="promo-card__bg">
+            <img src="img/catalog2.png" alt="Кровельные материалы" class="promo-card__bg">
             <div class="promo-card__overlay"></div>
             <div class="promo-card__content">
               <h3 class="promo-card__name">Кровельные материалы</h3>
               <p class="promo-card__text"></p>
-              
               <a href="#" class="promo-card__btn">Перейти в категорию</a>
             </div>
           </article>
 
+          <!-- Card 3 -->
           <article class="promo-card promo-card--red1">
-            <img src="img/catalog3.png" alt="Metrolite" class="promo-card__bg">
+            <img src="img/catalog3.png" alt="Фасадные материалы" class="promo-card__bg">
             <div class="promo-card__overlay"></div>
             <div class="promo-card__content">
-              <h3 class="promo-card__name">Фасадные и облицовочные материалы</h3>
+              <h3 class="promo-card__name">Фасадные и облицовочные материалы</h3>
               <p class="promo-card__text"></p>
-              
               <a href="#" class="promo-card__btn">Перейти в категорию</a>
             </div>
           </article>
 
+          <!-- Card 4 -->
           <article class="promo-card promo-card--brown1">
-            <img src="img/catalog4.png" alt="Metrolite" class="promo-card__bg">
+            <img src="img/catalog4.png" alt="Ландшафт" class="promo-card__bg">
             <div class="promo-card__overlay"></div>
             <div class="promo-card__content">
-              <h3 class="promo-card__name">Ландшафт и благоустройство</h3>
+              <h3 class="promo-card__name">Ландшафт и благоустройство</h3>
               <p class="promo-card__text"></p>
-              
-              <a href="#" class="promo-card__btn">Участвовать в акции</a>
+              <a href="#" class="promo-card__btn">Перейти в категорию</a>
+            </div>
+          </article>
+
+          <!-- Card 5 (yangi) -->
+          <article class="promo-card promo-card--gray1">
+            <img src="img/catalog1.jpg" alt="Утеплители" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Утеплители и изоляция</h3>
+              <p class="promo-card__text"></p>
+              <a href="#" class="promo-card__btn">Перейти в категорию</a>
+            </div>
+          </article>
+
+          <!-- Card 6 (yangi) -->
+          <article class="promo-card promo-card--green1">
+            <img src="img/catalog2.png" alt="Напольные покрытия" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Напольные покрытия</h3>
+              <p class="promo-card__text"></p>
+              <a href="#" class="promo-card__btn">Перейти в категорию</a>
+            </div>
+          </article>
+
+          <!-- Card 7 (yangi) -->
+          <article class="promo-card promo-card--brown1">
+            <img src="img/catalog3.png" alt="Инженерные системы" class="promo-card__bg">
+            <div class="promo-card__overlay"></div>
+            <div class="promo-card__content">
+              <h3 class="promo-card__name">Инженерные системы</h3>
+              <p class="promo-card__text"></p>
+              <a href="#" class="promo-card__btn">Перейти в категорию</a>
             </div>
           </article>
 
@@ -297,12 +396,15 @@
 
     </div>
 
-    <!-- Pagination dots -->
+    <!-- Pagination dots (7 card, mobileda har biri alohida) -->
     <div class="promotions__pagination">
       <button class="promo-dot active" aria-label="Слайд 1"></button>
       <button class="promo-dot" aria-label="Слайд 2"></button>
       <button class="promo-dot" aria-label="Слайд 3"></button>
       <button class="promo-dot" aria-label="Слайд 4"></button>
+      <button class="promo-dot" aria-label="Слайд 5"></button>
+      <button class="promo-dot" aria-label="Слайд 6"></button>
+      <button class="promo-dot" aria-label="Слайд 7"></button>
     </div>
 
   </div>
@@ -372,6 +474,7 @@
           <div class="offers__grid">
             <div class="offers__slides-track">
 
+              <!-- Card 1 -->
               <article class="p-card">
                 <div class="p-card__img">
                   <img src="img/offers2.png" alt="Atlas Stone">
@@ -400,6 +503,7 @@
                 </div>
               </article>
 
+              <!-- Card 2 -->
               <article class="p-card">
                 <div class="p-card__img">
                   <img src="img/offers3.png" alt="Atlas Stone">
@@ -429,6 +533,7 @@
                 </div>
               </article>
 
+              <!-- Card 3 -->
               <article class="p-card">
                 <div class="p-card__img">
                   <img src="img/offers4.png" alt="Atlas Stone">
@@ -466,6 +571,72 @@
                 </div>
               </article>
 
+              <!-- Card 4 (yangi) -->
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers1.png" alt="Atlas Stone">
+                </div>
+                <div class="p-card__badges">
+                  <span class="badge badge--green">Хит продаж</span>
+                  <span class="badge badge--green2">Есть в наличии</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 601/602, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Акция. Бесплатная доставка от 50 000 ₽</span>
+                  </div>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main">990<span class="sup">00</span> <span class="currency">₽</span></div>
+                    </div>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main">3 564<span class="sup">00</span> <span class="currency">₽</span></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 5 (yangi) -->
+              <article class="p-card">
+                <div class="p-card__img">
+                  <img src="img/offers2.png" alt="Atlas Stone">
+                </div>
+                <div class="p-card__badges">
+                  <span class="badge badge--navy">Официальный дилер</span>
+                  <span class="badge badge--red">Товар по акции</span>
+                </div>
+                <div class="p-card__content">
+                  <h3 class="p-card__title">Искусственный камень Atlas Stone Коломенский кирпич цвет: 701/702, угловой текст текст текст</h3>
+                  <div class="p-card__promo">
+                    <span class="p-card__promo-icon">%</span>
+                    <span class="p-card__promo-text">Скидки до 25% на весь ассортимент</span>
+                  </div>
+                  <a href="#" class="p-card__link">Все акции</a>
+                  <div class="p-card__footer">
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>пог. м</span></div>
+                      <div class="price-block__main price-block__main--sale">1 050<span class="sup">00</span> <span class="currency">₽</span></div>
+                      <div class="price-block__old">
+                        <span class="old-val">1 400.00</span>
+                        <span class="save-val">350 ₽ (25%)</span>
+                      </div>
+                    </div>
+                    <div class="price-block">
+                      <div class="price-block__label">Цена за: <span>гофротара</span></div>
+                      <div class="price-block__main price-block__main--sale">8 400<span class="sup">00</span> <span class="currency">₽</span></div>
+                      <div class="price-block__old">
+                        <span class="old-val">11 200.00</span>
+                        <span class="save-val">2 800 ₽ (25%)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
             </div>
           </div>
         </div>
@@ -476,6 +647,7 @@
       </button>
     </div>
 
+    <!-- 5 card uchun pagination dots -->
     <div class="pagination">
       <div class="pagination__dots">
         <span class="dot dot--active"></span>
@@ -2258,6 +2430,72 @@
     </div>
   </div>
 </footer>
+
+
+
+<!-- Floating Chat Widget -->
+<div class="chat-widget" id="chatWidget">
+
+  <ul class="chat-widget__items">
+
+    <li class="chat-widget__item">
+      <span class="chat-widget__label">Viber</span>
+      <a href="" class="chat-widget__btn chat-widget__btn--viber">
+        <i class="fa-brands fa-viber"></i>
+      </a>
+    </li>
+
+    <li class="chat-widget__item">
+      <span class="chat-widget__label">Telegram</span>
+      <a href="" target="_blank" class="chat-widget__btn chat-widget__btn--telegram">
+        <i class="fa-brands fa-telegram"></i>
+      </a>
+    </li>
+
+    <li class="chat-widget__item">
+      <span class="chat-widget__label">Написать</span>
+      <button class="chat-widget__btn chat-widget__btn--form" id="openFormBtn">
+        <i class="fa-solid fa-envelope"></i>
+      </button>
+    </li>
+
+    <li class="chat-widget__item">
+      <span class="chat-widget__label">Заказать звонок</span>
+      <a href="tel:84951183952" class="chat-widget__btn chat-widget__btn--call">
+        <i class="fa-solid fa-phone-volume"></i>
+      </a>
+    </li>
+
+  </ul>
+
+  <button class="chat-widget__toggle" id="chatToggle">
+    <i class="fa-solid fa-message icon-open"></i>
+    <i class="fa-solid fa-xmark icon-close"></i>
+  </button>
+
+</div>
+
+<!-- Modal Form -->
+<div class="chat-modal-overlay" id="chatModalOverlay">
+  <div class="chat-modal">
+    <button class="chat-modal__close" id="closeModal">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <h3>Написать нам</h3>
+    <p>Мы ответим в ближайшее время</p>
+    <input type="text" placeholder="Ваше имя">
+    <input type="tel" placeholder="Телефон">
+    <input type="email" placeholder="E-mail">
+    <textarea placeholder="Сообщение..."></textarea>
+    <button type="submit">ОТПРАВИТЬ</button>
+  </div>
+</div>
+
+
+
+
+
+
 
 
 

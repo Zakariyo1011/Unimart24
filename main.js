@@ -1,4 +1,6 @@
+/////////
 // Mobile search toggle
+
 const mobileSearchBtn = document.getElementById('mobileSearchBtn');
 const mobileSearchBar = document.getElementById('mobileSearchBar');
 
@@ -8,7 +10,9 @@ if (mobileSearchBtn && mobileSearchBar) {
     });
 }
 
+
 // Mobile menu
+
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileMenuClose = document.getElementById('mobileMenuClose');
@@ -28,7 +32,6 @@ if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMenu);
 if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMenu);
 if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
 
-
 window.addEventListener('resize', () => {
     if (window.innerWidth > 768) {
         if (mobileSearchBar) mobileSearchBar.classList.remove('open');
@@ -36,6 +39,54 @@ window.addEventListener('resize', () => {
         document.body.style.overflow = '';
     }
 });
+
+
+// "Свяжитесь с нами" dropdown
+
+const callbackDropdown = document.querySelector('.callback-dropdown');
+
+if (callbackDropdown) {
+    const menu = callbackDropdown.querySelector('.callback-dropdown__menu');
+    const caret = callbackDropdown.querySelector('.fa-caret-down');
+
+    callbackDropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.classList.toggle('open');
+        if (caret) caret.style.transform = menu.classList.contains('open') ? 'rotate(180deg)' : '';
+    });
+
+    document.addEventListener('click', () => {
+        menu.classList.remove('open');
+        if (caret) caret.style.transform = '';
+    });
+}
+
+
+// Hero Slider — dots pagination
+
+const slides = document.querySelectorAll('.hero__slide');
+const dots = document.querySelectorAll('.hero__dots .dot');
+
+function goToSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+}
+
+dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index'));
+        goToSlide(index);
+    });
+});
+
+
+
+
+
 
 
 
@@ -134,82 +185,83 @@ window.addEventListener('resize', () => {
 
 
 
-// PROMOTIONS SLIDER (Multi-section support)
+
+// PROMOTIONS SLIDER
+
+
 
 
 {
-  // 1. Sahifadagi barcha slider konteynerlarini topamiz
   const sliderSections = document.querySelectorAll('.promotions__container');
 
   sliderSections.forEach((container) => {
-    // 2. Har bir section ichidan o'ziga tegishli elementlarni qidiramiz
-    const promotionsGrid = container.querySelector('.promotions__grid');
-    const prevBtn = container.querySelector('.promotions-arrow--left');
-    const nextBtn = container.querySelector('.promotions-arrow--right');
-    const promoDots = container.querySelectorAll('.promo-dot');
-    const items = promotionsGrid.querySelectorAll('.promo-card');
+    const grid      = container.querySelector('.promotions__grid');
+    const prevBtn   = container.querySelector('.promotions-arrow--left');
+    const nextBtn   = container.querySelector('.promotions-arrow--right');
+    const dots      = container.querySelectorAll('.promo-dot');
+    const items     = grid ? grid.querySelectorAll('.promo-card') : [];
 
-    if (promotionsGrid && prevBtn && nextBtn) {
-      let currentIndex = 0;
+    if (!grid || !items.length) return;
 
-      function getVisibleCount() {
-        return window.innerWidth <= 768 ? 1 : 4;
-      }
+    let currentIndex = 0;
 
-      function getTotalSlides() {
-        // Agar kartalar soni ko'rinadiganidan kam bo'lsa, 0 qaytaramiz
-        const count = items.length - getVisibleCount() + 1;
-        return count > 0 ? count : 1;
-      }
+    // Nechta card bir vaqtda ko'rinadi
+    function getVisibleCount() {
+      if (window.innerWidth <= 768)  return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 4;
+    }
 
-      function goToSlide(index) {
-        const totalSlides = getTotalSlides();
+    // Jami nechta "qadam" bor
+    function getTotalSteps() {
+      return Math.max(1, items.length - getVisibleCount() + 1);
+    }
 
-        if (index < 0) index = 0;
-        if (index >= totalSlides) index = totalSlides - 1;
+    function goToSlide(index) {
+      const total = getTotalSteps();
+      currentIndex = Math.min(Math.max(index, 0), total - 1);
 
-        currentIndex = index;
+      // Birinchi cardning kengligi + gap (20px)
+      const itemWidth = items[0].offsetWidth + 20;
+      grid.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
 
-        // Gap (masofa) ni aniqlaymiz (20px deb olingan)
-        const itemWidth = items[0].offsetWidth + 20; 
-        promotionsGrid.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-
-        // Nuqtalarni (dots) faqat shu section ichida yangilaymiz
-        promoDots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === currentIndex);
-        });
-
-        // Tugmalar shaffofligini boshqarish
-        prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
-        nextBtn.style.opacity = currentIndex >= totalSlides - 1 ? '0.3' : '1';
-      }
-
-      // Hodisalarni biriktirish
-      nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-      prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-
-      promoDots.forEach((dot, i) => {
-        dot.addEventListener('click', () => goToSlide(i));
+      // Dotlarni yangilash
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
       });
 
-      window.addEventListener('resize', () => goToSlide(0));
-
-      // Swipe (Mobil uchun)
-      let touchStartX = 0;
-      promotionsGrid.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].clientX;
-      }, { passive: true });
-
-      promotionsGrid.addEventListener('touchend', (e) => {
-        const diff = touchStartX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 50) {
-          goToSlide(diff > 0 ? currentIndex + 1 : currentIndex - 1);
-        }
-      }, { passive: true });
-
-      // Boshlang'ich holat
-      goToSlide(0);
+      // Strelkalar opacity
+      if (prevBtn) prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
+      if (nextBtn) nextBtn.style.opacity = currentIndex >= total - 1 ? '0.3' : '1';
     }
+
+    // Strelkalar
+    if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    // Dotlar
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => goToSlide(i));
+    });
+
+    // Resize da qayta hisoblash
+    window.addEventListener('resize', () => goToSlide(0));
+
+    // Swipe (mobile)
+    let touchStartX = 0;
+    grid.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+
+    grid.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        goToSlide(diff > 0 ? currentIndex + 1 : currentIndex - 1);
+      }
+    }, { passive: true });
+
+    // Boshlang'ich holat
+    goToSlide(0);
   });
 }
 
@@ -226,94 +278,167 @@ window.addEventListener('resize', () => {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  const isMobile = () => window.innerWidth <= 768;
+  var isMobile = function () { return window.innerWidth <= 768; };
 
-  // 1. Category dropdown (Barcha menyular uchun)
-  const allSideMenus = document.querySelectorAll('.side-menu'); // Asosiy konteynerni olamiz
 
-  allSideMenus.forEach(menu => {
-    const menuHeader = menu.querySelector('.side-menu__header');
-    const menuList = menu.querySelector('.side-menu__list');
+  // 1. Category dropdown (side-menu)
+  
+  var allSideMenus = document.querySelectorAll('.side-menu');
 
-    if (menuHeader && menuList) {
-      menuHeader.addEventListener('click', () => {
-        if (!isMobile()) return;
-        const open = menuList.classList.toggle('open');
-        menuHeader.classList.toggle('open', open);
-      });
+  allSideMenus.forEach(function (menu) {
+    var menuHeader = menu.querySelector('.side-menu__header');
+    var menuList   = menu.querySelector('.side-menu__list');
 
-      menuList.querySelectorAll('.side-menu__item').forEach(item => {
-        item.addEventListener('click', function () {
-          menuList.querySelectorAll('.side-menu__item').forEach(i => i.classList.remove('side-menu__item--active'));
-          this.classList.add('side-menu__item--active');
-          
-          const headerSpan = menuHeader.querySelector('span');
-          if (headerSpan) headerSpan.textContent = this.textContent;
+    if (!menuHeader || !menuList) return;
 
-          if (isMobile()) {
-            menuList.classList.remove('open');
-            menuHeader.classList.remove('open');
-          }
-        });
-      });
-    }
-  });
-
-  // 2. Slider (Barcha slider sectionlar uchun)
-  const allOfferSections = document.querySelectorAll('.offers'); // Har bir sectionni alohida olamiz
-
-  allOfferSections.forEach(section => {
-    const track = section.querySelector('.offers__slides-track');
-    const prevBtn = section.querySelector('.offers__nav--prev');
-    const nextBtn = section.querySelector('.offers__nav--next');
-    const dots = section.querySelectorAll('.pagination .dot');
-    const cards = section.querySelectorAll('.p-card');
-    
-    if (!track || cards.length === 0) return; // Agar bu sectionda slider bo'lmasa, o'tib ketamiz
-
-    let current = 0;
-    const total = cards.length;
-
-    function goTo(index) {
-      if (index < 0) index = total - 1;
-      if (index >= total) index = 0;
-      current = index;
-      
-      if (isMobile()) {
-        track.style.transform = `translateX(-${current * 100}%)`;
-      } else {
-        track.style.transform = '';
-      }
-      
-      dots.forEach((dot, i) => dot.classList.toggle('dot--active', i === current));
-    }
-
-    if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
-    
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => goTo(i));
+    menuHeader.addEventListener('click', function () {
+      if (!isMobile()) return;
+      var open = menuList.classList.toggle('open');
+      menuHeader.classList.toggle('open', open);
     });
 
-    // Swipe (Har bir slider uchun alohida)
-    let startX = 0;
-    track.addEventListener('touchstart', e => { 
-      startX = e.changedTouches[0].screenX; 
+    menuList.querySelectorAll('.side-menu__item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        menuList.querySelectorAll('.side-menu__item').forEach(function (i) {
+          i.classList.remove('side-menu__item--active');
+        });
+        this.classList.add('side-menu__item--active');
+
+        var headerSpan = menuHeader.querySelector('span');
+        if (headerSpan) headerSpan.textContent = this.textContent;
+
+        if (isMobile()) {
+          menuList.classList.remove('open');
+          menuHeader.classList.remove('open');
+        }
+      });
+    });
+  });
+
+
+  // 2. Offers Slider
+
+  var allOfferSections = document.querySelectorAll('.offers');
+
+  allOfferSections.forEach(function (section) {
+    var track   = section.querySelector('.offers__slides-track');
+    var prevBtn = section.querySelector('.offers__nav--prev');
+    var nextBtn = section.querySelector('.offers__nav--next');
+    var dots    = section.querySelectorAll('.pagination .dot');
+    var cards   = section.querySelectorAll('.p-card');
+
+    if (!track || cards.length === 0) return;
+
+    var current = 0;
+    var mobilePrev = null;
+    var mobileNext = null;
+
+    // Mobile uchun strelkalarni yaratish va active cardning rasmi ichiga qo'yish
+    function createMobileNavs() {
+      mobilePrev = document.createElement('button');
+      mobilePrev.className = 'mobile-nav-prev';
+      mobilePrev.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+
+      mobileNext = document.createElement('button');
+      mobileNext.className = 'mobile-nav-next';
+      mobileNext.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+
+      mobilePrev.addEventListener('click', function () { goTo(current - 1); });
+      mobileNext.addEventListener('click', function () { goTo(current + 1); });
+
+      // Birinchi cardga qo'yamiz
+      var firstImg = cards[0].querySelector('.p-card__img');
+      if (firstImg) {
+        firstImg.appendChild(mobilePrev);
+        firstImg.appendChild(mobileNext);
+      }
+    }
+
+    function removeMobileNavs() {
+      if (mobilePrev) { mobilePrev.remove(); mobilePrev = null; }
+      if (mobileNext) { mobileNext.remove(); mobileNext = null; }
+    }
+
+    function moveMobileNavsToCard(index) {
+      if (!mobilePrev || !mobileNext) return;
+      var img = cards[index] ? cards[index].querySelector('.p-card__img') : null;
+      if (img) {
+        img.appendChild(mobilePrev);
+        img.appendChild(mobileNext);
+      }
+    }
+
+    function getVisibleCount() {
+      return isMobile() ? 1 : 3;
+    }
+
+    function getTotalSteps() {
+      return Math.max(1, cards.length - getVisibleCount() + 1);
+    }
+
+    function goTo(index) {
+      var total = getTotalSteps();
+      current = Math.min(Math.max(index, 0), total - 1);
+
+      if (isMobile()) {
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        moveMobileNavsToCard(current);
+
+        if (mobilePrev) mobilePrev.style.opacity = current === 0 ? '0.4' : '1';
+        if (mobileNext) mobileNext.style.opacity = current >= total - 1 ? '0.4' : '1';
+      } else {
+        var cardWidth = cards[0].offsetWidth + 1;
+        track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
+
+        if (prevBtn) prevBtn.style.opacity = current === 0 ? '0.4' : '1';
+        if (nextBtn) nextBtn.style.opacity = current >= total - 1 ? '0.4' : '1';
+      }
+
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('dot--active', i === current);
+      });
+    }
+
+    // Desktop strelkalar
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+    // Dotlar
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { goTo(i); });
+    });
+
+    // Swipe
+    var startX = 0;
+    track.addEventListener('touchstart', function (e) {
+      startX = e.changedTouches[0].screenX;
     }, { passive: true });
 
-    track.addEventListener('touchend', e => {
-      const diff = startX - e.changedTouches[0].screenX;
-      if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+    track.addEventListener('touchend', function (e) {
+      var diff = startX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) {
+        goTo(diff > 0 ? current + 1 : current - 1);
+      }
     }, { passive: true });
 
-    // Window resize bo'lganda faqat shu sliderni yangilash
-    window.addEventListener('resize', () => goTo(current));
-    
-    // Boshlang'ich holat
+    // Resize
+    window.addEventListener('resize', function () {
+      if (isMobile()) {
+        if (!mobilePrev) createMobileNavs();
+      } else {
+        removeMobileNavs();
+      }
+      goTo(0);
+    });
+
+    // Init
+    if (isMobile()) {
+      createMobileNavs();
+    }
     goTo(0);
   });
-});
 
+});
 
 
 
@@ -383,34 +508,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Accordion (Savol-javob)
-    const faqRows = document.querySelectorAll('.faq-row');
+document.addEventListener('DOMContentLoaded', function () {
 
-    faqRows.forEach(row => {
-        row.addEventListener('click', () => {
-            const wrapper = row.parentElement;
-            
-            // Boshqa ochiq savollarni yopish (ixtiyoriy)
-            document.querySelectorAll('.faq-row-wrapper').forEach(item => {
-                if (item !== wrapper) item.classList.remove('open');
+    // 1. Accordion (Savol-javob)
+    var faqRows = document.querySelectorAll('.faq-row');
+
+    faqRows.forEach(function (row) {
+        row.addEventListener('click', function () {
+            var wrapper = row.parentElement;
+            var isOpen = wrapper.classList.contains('open');
+
+            // Barcha ochiq savollarni yopish 
+            document.querySelectorAll('.faq-row-wrapper').forEach(function (item) {
+                item.classList.remove('open');
+                item.querySelector('.faq-row').classList.remove('active');
             });
 
-            // Tanlangan savolni ochish/yopish
-            wrapper.classList.toggle('open');
-            row.classList.toggle('active');
+            // Agar bosilgan yopiq bo'lsa — ochish
+            if (!isOpen) {
+                wrapper.classList.add('open');
+                row.classList.add('active');
+            }
         });
     });
 
-    // 2. Galereya surish (Gallery Next btn)
-    const gallery = document.querySelector('.gallery-images');
-    const nextBtn = document.querySelector('.gallery-next-btn');
+    // 2. Galereya surish
+    var gallery = document.querySelector('.gallery-images');
+    var nextBtn = document.querySelector('.gallery-next-btn');
 
     if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
+        nextBtn.addEventListener('click', function () {
             gallery.scrollBy({ left: 220, behavior: 'smooth' });
         });
     }
+
 });
 
 
@@ -501,6 +632,74 @@ if (reviewNextBtn && reviewGallery) {
     });
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////Chat
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  var widget      = document.getElementById('chatWidget');
+  var toggle      = document.getElementById('chatToggle');
+  var overlay     = document.getElementById('chatModalOverlay');
+  var openFormBtn = document.getElementById('openFormBtn');
+  var closeModal  = document.getElementById('closeModal');
+
+  // Toggle widget open / close
+  toggle.addEventListener('click', function () {
+    widget.classList.toggle('is-open');
+  });
+
+  // Open modal form
+  openFormBtn.addEventListener('click', function () {
+    overlay.classList.add('is-open');
+    widget.classList.remove('is-open');
+  });
+
+  // Close modal by X button
+  closeModal.addEventListener('click', function () {
+    overlay.classList.remove('is-open');
+  });
+
+  // Close modal by clicking outside (overlay background)
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) {
+      overlay.classList.remove('is-open');
+    }
+  });
+
+  // Close widget when clicking outside of it
+  document.addEventListener('click', function (e) {
+    if (!widget.contains(e.target)) {
+      widget.classList.remove('is-open');
+    }
+  });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
@@ -568,41 +767,20 @@ if (reviewNextBtn && reviewGallery) {
 
 
 
-// ... (Sizning barcha kodlaringiz shu yerda)
 
-/**
- * ============================================================
- * PROJECT JAVASCRIPT DOCUMENTATION & NOTES
- * ============================================================
- * * 1. MOBILE INTERFACE (NAV & SEARCH):
- * - 'mobileSearchBtn' va 'mobileSearchBar' o'rtasida toggle mantiqi o'rnatilgan.
- * - Mobil menyu (Burger menu) 'open' va 'close' funksiyalari orqali boshqariladi.
- * - Menyu ochilganda 'body' skroll bo'lmasligi uchun 'overflow: hidden' qilingan.
- * - Window 'resize' bo'lib 768px dan oshganda barcha mobil elementlar avtomatik yopiladi.
- * * 2. SLIDER LOGIC (CATALOG & PROMOTIONS):
- * - Ko'p blokli slider tizimi (Multi-section support) qo'llanilgan.
- * - 'getVisibleCount' funksiyasi ekran kengligiga qarab 1 yoki 4 ta element ko'rsatishni aniqlaydi.
- * - 'goToSlide' funksiyasi:
- * * 'translateX' yordamida elementlarni suradi.
- * * Navigatsiya nuqtalarini (dots) 'active' klassi bilan yangilaydi.
- * * Slider boshi va oxirida tugmalarning 'opacity' (shaffofligi) ni o'zgartiradi.
- * - Mobil qurilmalar uchun 'touchstart' va 'touchend' orqali Swipe (surish) imkoniyati qo'shilgan.
- * * 3. OFFERS & CATEGORY DROPDOWN:
- * - 'allSideMenus' har bir dropdown menyuni alohida mustaqil boshqaradi.
- * - Mobil versiyada kategoriya tanlanganda dropdown avtomatik yopiladi va sarlavha matni o'zgaradi.
- * - 'allOfferSections' har bir slider blokini (track) o'zaro to'qnashuvsiz (independent) ishlatadi.
- * * 4. DOCUMENT VIEWER (INFORMATION):
- * - Thumbnail (kichik rasm) bosilganda asosiy rasm ('mainImg') manbasi 'src' orqali almashadi.
- * - 'currentIndex' yordamida Prev/Next strelkalari cheksiz sikl (Modulo % operatori) orqali ishlaydi.
- * * 5. FAQ & REVIEWS (ACCORDION & INTERACTIVE):
- * - Accordion: Bir savol ochilganda boshqalari yopilish mantiqi 'faq-row'da mavjud.
- * - Progress Bar: Sahifa yuklanganda 'setTimeout' orqali 0 dan berilgan foizgacha animatsiya bo'ladi.
- * - Gallery Scroll: 'scrollBy' funksiyasi yordamida rasmlar gorizontal tekislikda (smooth) suriladi.
- * * 6. EXPERT REVIEWS:
- * - 'Read More' tugmasi bosilganda CSS'dagi cheklovlar ('webkitLineClamp') olib tashlanib, to'liq matn ochiladi.
- * - Rasm galereyasi aniq piksellar (226px) bo'yicha hisoblab suriladi.
- * * ============================================================
- * TIP: Kodni yanada optimallashtirish uchun takrorlanadigan slider 
- * funksiyalarini bitta umumiy Class yoki Function'ga jamlash mumkin.
- * ============================================================
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
